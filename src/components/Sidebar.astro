@@ -1,26 +1,10 @@
 <div class='sidebar'>
     <div class='logo'></div>
-    <ul>
-        <li lang='ml'><a href='#'>മലയാളം</li>
-        <li><a href='#'>Gallery</li>
-        <li><a href='#'>Catecism</li>
-    </ul>
+    <slot />
 </div>
 <style lang='scss'>
     .sidebar {
         max-width: 30ch;
-    }
-    .logo {
-        width: 100%;
-        height: 15ch;
-        background-color: crimson;
-    }
-    ul {
-        margin: 0;
-        padding: 0;
-    }
-    li {
-        list-style: none;
-        padding: 0;
+        border: 1px solid black // remove later
     }
 </style>
