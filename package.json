@@ -12,8 +12,12 @@
   },
   "dependencies": {
     "@astrojs/image": "^0.7.0",
+    "@astrojs/mdx": "^0.11.1",
     "@astrojs/svelte": "^1.0.0",
+    "@fontsource/noto-serif": "^4.5.10",
+    "@fontsource/noto-serif-malayalam": "^4.5.10",
     "astro": "^1.2.4",
+    "sass": "^1.55.0",
     "svelte": "^3.46.4"
   }
 }
