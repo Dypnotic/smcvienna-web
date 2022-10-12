@@ -1,8 +1,4 @@
-<script lang="ts">
-    export let classes:string;
-</script>
-
-<nav class={classes}>
+<nav>
     <ul>
         <li><a href='/'>Blog</a></li>
         <li><a href='/'>Gallery</a></li>
@@ -11,7 +7,9 @@
 </nav>
 <style lang='scss'>
     nav{
-        display: none;
+
+        width: 100%;
+        height: calc(100vh - 112px);
     }
     ul {
         margin: 0;
@@ -27,7 +25,5 @@
         padding: 8px 16px;
     }
 
-    .active{
-        display: flex;
-    }
+
 </style>
