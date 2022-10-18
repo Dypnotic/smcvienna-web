@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Nav from "../components/Nav.svelte";
+  import Nav from "./Nav.svelte";
 
   let isMenuActive: boolean = false;
   const toggleMenu = () => (isMenuActive = !isMenuActive);
@@ -27,7 +27,6 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    position: sticky;
     top: 0;
     background-color: var(--color-bg);
   }
@@ -71,18 +70,6 @@
     }
   }
 
-  @keyframes  gradientAnimation {
-    0% {
-      background-position: 91% 0%;
-    }
-    50% {
-      background-position: 10% 100%;
-    }
-    100% {
-      background-position: 91% 0%;
-    }
-  }
-
   // Menu Button
   .menu-button {
     border: none;
@@ -92,12 +79,14 @@
     flex-direction: column;
     gap: 5px;
     padding: 16px;
-    // border-radius: 50px;
     cursor: pointer;
     transition: background-color .3s ease-in-out;
 
     &:active, &:hover {
-      background-color: rgb(12 12 12 / .1);
+      background-color: var(--color-links);
+      .line {
+        background-color: var(--color-bg);
+      }
     }
     @media screen and (min-width: 1000px) {
       display: none;
@@ -108,6 +97,7 @@
     width: 30px;
     height: 3px;
     border-radius: 3px;
+    transition: background-color .3s ease-in-out;
 
     &.--short {
       width: 20px;
@@ -117,10 +107,17 @@
   .nav-container {
     display: flex;
     position:fixed;
+    width: 100%;
+    height: calc(100% - 112px);
+    max-width: 600px;
     bottom: 0;
-    left: -250px;
-    background-color: crimson;
+    left: -100vh;
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px) brightness(105%);
     transition: left .3s ease-in-out;
+    @media screen and (min-width: 1000px) {
+      display: none;
+    }
   }
   .active{
     left: 0;
