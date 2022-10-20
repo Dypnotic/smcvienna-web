@@ -61,7 +61,7 @@
 		mask-position: center left;
 
 		background: var(--gradient-bg);
-		background-size: 800% 800%;
+		background-size: 600% 600%;
 		animation: gradientAnimation 30s ease infinite;
 
 		@media screen and (min-width: variables.$max-width) {

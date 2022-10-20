@@ -9,13 +9,11 @@ const content = {};
 ---
 
 <Layout content={content}>
-	<ul>
-		{posts.map((post) => (
-			<li>
-				<BlogCard title={post.frontmatter.title} url={post.url} image={post.frontmatter.heroImage} pubDate={post.frontmatter.pubDate}/>
-			</li>
-		))}
-	</ul>
+	<h1>Oh no! 😨</h1>
+	<p>The page you intended to visit does not exist. <br />
+		Instead, check out our latest <a href="/">news.</a><br />
+	</p>
+
 </Layout>
 
 <style>

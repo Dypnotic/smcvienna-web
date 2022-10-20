@@ -1,7 +1,7 @@
 <nav>
 	<ul>
 		<li><a href="/">Blog</a></li>
-		<li><a href="/">Gallery</a></li>
+		<li><a href="/gallery">Gallery</a></li>
 		<li><a href="/">Catecism</a></li>
 	</ul>
 </nav>
