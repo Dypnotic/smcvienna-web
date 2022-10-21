@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro'
+// import '../style/variables.scss'
+const content = {
+	title: 'Chaplains',
+	desciption: 'The chaplains of the Syro Malaber Community Vienna',
+}
+---
+
+<Layout content={content}>
+	<h1>Chaplains</h1>
+	<section>
+		<img src="/assets/meta-image.png" alt="Portrait of Pater Dr. Thomas Thandapilly" width="150" height="200">
+		<div class="text">
+			<h2>Pater Dr. Thomas Thandapilly CST</h2>
+			<h3>Chaplain <span lang="de">(Seelsorger)</span></h3>
+			<address>
+				Residence: A-1120 Vienna, Tivoligasse 20
+				Tel:  <a href="tel:+4318174206">+43 1 817 42 06</a>
+				Mobile: <a href="+4369911966771">+43 699 1 196 67 71</a>
+				Email: <a href="mailto:thandappilly@aon.at">thandappilly@aon.at</a>
+			</address>
+		</div>
+	</section>
+
+	<section>
+		<img src="/assets/meta-image.png" alt="Portrait of Pater Dr. Thomas Thandapilly" width="150" height="200">
+		<div class="text">
+			<h2>Pater Mathew Mecheril MCBS (Wilson)</h2>
+			<h3>Assistant Chaplain <span lang="de">(Aushilfe Seelsorger)</span></h3>
+			<address>
+				Residence: Pfarre Donalufeld<br />
+				Kinzerplatz 19, A- 1210 Vienna
+				Tel:  <a href="tel:+431278320315">+43 1 278 32 03 15</a>
+				Mobile: <a href="+436765323704">+43 676 532 37 04</a>
+				Email: <a href="mailto:	wilsonmcbs@live.com">wilsonmcbs@live.com</a>
+			</address>
+		</div>
+	</section>
+</Layout>
+
+<style lang="scss">
+	@use '../style/variables';
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+		@media (min-width: variables.$max-width) {
+			img{
+				align-self: start;
+			}
+			flex-direction: row;
+		}
+	}
+	img {
+		align-self: center;
+		object-fit: cover;
+		text-align: center;
+	}
+</style>

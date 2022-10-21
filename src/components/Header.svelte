@@ -1,6 +1,6 @@
 <script lang="ts">
 	import Nav from './Nav.svelte'
-  import SmallAdress from './SmallAdress.svelte'
+	import SmallAddress from './SmallAddress.svelte'
 
 	let isMenuActive: boolean = false
 	const toggleMenu = () => (isMenuActive = !isMenuActive)
@@ -11,7 +11,10 @@
 		<div class="top">
 			<!-- svelte-ignore a11y-missing-content -->
 			<a href="/" class="logo" aria-label="Home and Logo" />
-			<button title="Menu" class="menu-button" on:click={toggleMenu}>
+			<button
+				title="Menu"
+				class={`menu-button ${isMenuActive ? 'active' : ''}`}
+				on:click={toggleMenu}>
 				<div class="line --short" />
 				<div class="line" />
 				<div class="line --short" />
@@ -19,7 +22,7 @@
 		</div>
 		<div class={`nav-container ${isMenuActive ? 'active' : ''}`}>
 			<Nav />
-			<SmallAdress />
+			<SmallAddress />
 		</div>
 	</div>
 </header>
@@ -94,17 +97,34 @@
 		@media screen and (min-width: variables.$max-width) {
 			display: none;
 		}
+		&.active {
+			.line {
+				width: 0;
+				&.--short {
+					width: 30px;
+					&:first-of-type {
+						rotate: 45deg;
+						translate: 0 8px;
+					}
+					&:last-of-type {
+						rotate: -45deg;
+						translate: 0 -8px;
+					}
+				}
+			}
+		}
 	}
 	.line {
 		background-color: var(--color-text);
 		width: 30px;
 		height: 3px;
 		border-radius: 3px;
-		transition: background-color 0.3s ease-in-out;
+		transition: background-color 0.3s ease-in-out, width 0.3s ease-in-out, rotate 0.3s ease-in-out, translate 0.3s ease-in-out;
 
 		&.--short {
 			width: 20px;
 		}
+		
 	}
 
 	.nav-container {
@@ -118,16 +138,14 @@
 		padding: 16px 0;
 		bottom: 0;
 		left: -100vh;
-		border-right: 1px solid var(--color-lines);
-		border-top: 1px solidvar(--color-lines);
 		-webkit-backdrop-filter: blur(15px);
 		backdrop-filter: blur(15px);
 		transition: left 0.3s ease-in-out;
 		@media screen and (min-width: variables.$max-width) {
 			display: none;
 		}
-	}
-	.active {
-		left: 0;
+		&.active {
+			left: 0;
+		}
 	}
 </style>

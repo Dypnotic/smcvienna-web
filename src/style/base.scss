@@ -1,9 +1,7 @@
 @use './variables.scss';
 
 :root {
-	--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-	--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
-	--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+	--font-size-base: 1rem;
 
 	--gradient-bg: linear-gradient(
 		222deg,
@@ -18,6 +16,7 @@
 	--color-bg: rgb(216 208 202);
 	--color-lines: rgb(182 177 166);
 	--color-links: rgb(123 53 204);
+	--color-emphesize: rgb(20, 148, 137);
 	
 	@media (prefers-color-scheme: dark) {
 		--color-text: rgb(231, 217, 195);
@@ -25,6 +24,7 @@
 		--color-bg: rgb(14, 15, 22);
 		--color-lines: rgb(62, 58, 71);
 		--color-links: rgb(151, 90, 221);
+		--color-emphesize: rgb(49 170 102);
 	}
 }
 
@@ -73,7 +73,20 @@
 }
 
 :where(h1, h2, h3, h4, h5, h6) {
-	margin: 0 0 2rem 0;
+	margin: 0;
+}
+
+:where(h1) {
+	margin-bottom: 1rem;
+}
+:where(h2) {
+	margin-bottom: .5rem;
+}
+
+:where(em) {
+	font-style: normal;
+	font-weight: 700;
+	color: var(--color-emphesize);
 }
 
 :where(img) {
@@ -92,4 +105,10 @@
 		--p: 100%;
 		color: var(--color-bg);
 	}
+}
+
+:where(address) {
+	font-size: 0.9rem;
+	font-style: normal;
+	color: var(--color-text-faded);
 }

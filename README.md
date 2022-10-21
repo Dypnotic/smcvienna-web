@@ -2,7 +2,7 @@
 
 ![SMC Hero Image](/public/assets/meta-image.png)
 
-## 📚 Project Structure
+## 🗃 Project Structure
 
 Inside of this project, you'll see the following folders and files:
 
@@ -43,15 +43,20 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`    | Run CLI commands like `astro add`, `astro preview` |
 | `npm run astro --help` | Get help using the Astro CLI                       |
 
-## Tech stack
+## 🧱 Tech stack
 
 Static-site meta-framework: Astro
+
 Component JS framework: Svelte
+
 CSS pre-processor: SCSS
-Blog
+
+Blog posts written in: MDX
 
 ### 🚀 Deployment
 
 Domain on world4you.at
+
 Hosted on render.com
+
 Images on AWS S3 Bucket

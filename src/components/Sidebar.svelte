@@ -1,13 +1,13 @@
 <script lang="ts">
 	import Header from './Header.svelte'
 	import Nav from './Nav.svelte'
-  import SmallAdress from './SmallAdress.svelte'
+  import SmallAddress from './SmallAddress.svelte'
 </script>
 
 <div class="sidebar">
 	<Nav />
 	<div class="bottom">
-		<SmallAdress />
+		<SmallAddress />
 	</div>
 </div>
 

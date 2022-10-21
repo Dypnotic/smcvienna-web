@@ -1,0 +1,34 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const content = {
+	title: 'Locations',
+	desciption: 'Viennese Locations of the Syro Malabar Church',
+}
+---
+
+<Layout content={content}>
+	<h1>Locations</h1>
+	<section>
+		<h2>Pfarre Maria Lourdes</h2>
+		Address: <br />
+		<address>
+				Tivoligasse 20, <br />
+				1120 Vienna
+		</address>
+		<p>Primary Catechism (1 to 7th Class) at <em>10:45 hrs.</em></p>
+
+		<p>Sunday Mass at <em>11:30 hrs.</em></p>
+	</section>
+	<section>
+		<h2>Pfarre Auferstehung Christi</h2>
+		Address: <br />
+		<address>
+				Saikogasse 8, <br />
+				1220 Vienna
+		</address>
+		<p>Primary Catechism (1 to 7th Class) at <em>16:15 hrs.</em></p>
+
+		<p>Sunday Mass at <em>17:00 hrs.</em></p>
+	</section>
+</Layout>

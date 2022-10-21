@@ -1,8 +1,46 @@
+<script lang="ts">
+
+	interface LinkProp {
+		name: string,
+		url: string
+	};
+
+	const links: LinkProp[]  = [
+		{
+			name: 'News',
+			url: '/'
+		},
+		{
+			name: 'Liturgy',
+			url: '/liturgy'
+		},
+		{
+			name: 'Locations',
+			url: '/locations'
+		},
+		{
+			name: 'Chaplains',
+			url: '/chaplains'
+		},
+		{
+			name: 'Pastoral Council',
+			url: '/pastoral-council'
+		},
+		{
+			name: 'Catechism',
+			url: '/catechism'
+		},
+		{
+			name: 'About',
+			url: '/about'
+		}
+	]
+</script>
 <nav>
 	<ul>
-		<li><a href="/">Blog</a></li>
-		<li><a href="/gallery">Gallery</a></li>
-		<li><a href="/">Catecism</a></li>
+		{#each links as link}
+			<li><a href={link.url}>{link.name}</a></li>
+		{/each}
 	</ul>
 </nav>
 
