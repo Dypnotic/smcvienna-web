@@ -5,12 +5,14 @@
 	export let imageAlt = `${title} (Hero Image)`;
 	export let url: string;
 	export let pubDate: string;
+	export let updateDate = pubDate;
 </script>
 
 <a href={url} class="blog-card">
 	{#if image !== ''}
-		<img src={image} alt={imageAlt} class:obituary={obituary}/>
+		<img src={image} alt={imageAlt} width="684" height="360" class:obituary={obituary}/>
 	{/if}
+	{#if pubDate === updateDate}
 	<time datetime={pubDate}>
 		{new Date(pubDate).toLocaleDateString('de-at', {
 			year: 'numeric',
@@ -18,10 +20,22 @@
 			day: 'numeric',
 		})}
 	</time>
+	{:else}
+	<time datetime={pubDate}>
+		Updated
+		{new Date(updateDate).toLocaleDateString('de-at', {
+			year: 'numeric',
+			month: 'short',
+			day: 'numeric',
+		})}
+	</time>
+	{/if}
 	<h2>{title}</h2>
 </a>
-
 <style lang='scss'>
+	img{
+		object-fit: contain;
+	}
 	a {
 		border: 1px solid var(--color-text-faded);
 		display: flex;

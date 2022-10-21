@@ -6,33 +6,41 @@ import '@fontsource/noto-serif/700.css'
 import Header from '../components/Header.svelte'
 import Sidebar from '../components/Sidebar.svelte'
 export interface Props {
-	content: {
-		title?: string;
-		description?: string;
-		pubDate?: string;
-		updatedDate?: string;
-		heroImage?: string;
-	};
+	title?: string
+	description?: string
+	pubDate?: string
+	updatedDate?: string
+	heroImage?: string
 }
 const {
-	content: { title = 'SMC Vienna', description = 'Welcome to the Syro Malabar Community Vienna Website.', pubDate, updatedDate, heroImage = '/assets/meta-image.png' },
-} = Astro.props;
+	title = 'SMC Vienna',
+	description = 'Welcome to the Syro Malabar Community Vienna Website.',
+	pubDate,
+	updatedDate = pubDate,
+	heroImage = '/assets/meta-image.png',
+} = Astro.props
 ---
 
 <!DOCTYPE html>
 <html lang='en'>
 	<head>
 		<meta charset='UTF-8' />
-		<meta name='viewport' content='width=device-width' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
 		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
 		<meta name='generator' content={Astro.generator} />
+		<meta name='description' content={description} />
+		<meta
+			name='keywords'
+			content='Christian, Syro Malabar Community, Vienna, SMC, Catholic, Indian, Kerala, Malayalam, Malayalee, Church'
+		/>
+		<meta name='author' content='Jens Cherukad' />
 
-		<meta property="og:title" content={title}>
-		<meta property="og:type" content="website" />
-		<meta property="og:description" content={description}>
-		<meta property="og:image" content={heroImage}>
-		<meta property="og:url" content={Astro.request.url}>
-		<meta name="twitter:card" content="summary_large_image">
+		<meta property='og:title' content={title} />
+		<meta property='og:type' content='website' />
+		<meta property='og:description' content={description} />
+		<meta property='og:image' content={heroImage} />
+		<meta property='og:url' content={Astro.request.url} />
+		<meta name='twitter:card' content='summary_large_image' />
 
 		<title>{title}</title>
 	</head>
@@ -47,31 +55,31 @@ const {
 			<slot />
 		</main>
 	</body>
-</html>
-<style lang='scss' is:global>
-	@use '../style/base';
-	@use '../style/variables';
+	<style lang='scss' is:global>
+		@use '../style/base';
+		@use '../style/variables';
 
-	.header {
-		grid-area: header;
-	}
-
-	.sidebar {
-		display: none;
-		grid-area: sidebar;
-		position: sticky;
-		top: 16px;
-		@media (min-width: variables.$max-width) {
-			display: block;
+		.header {
+			grid-area: header;
 		}
-	}
 
-	main {
-		padding: 16px;
-		width: 100%;
-		grid-area: main;
-		display: flex;
-		flex-direction: column;
-		gap: 32px;
-	}
-</style>
+		.sidebar {
+			display: none;
+			grid-area: sidebar;
+			position: sticky;
+			top: 16px;
+			@media (min-width: variables.$max-width) {
+				display: block;
+			}
+		}
+
+		main {
+			padding: 16px;
+			width: 100%;
+			grid-area: main;
+			display: flex;
+			flex-direction: column;
+			gap: 32px;
+		}
+	</style>
+</html>

@@ -1,14 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import BlogCard from '../components/BlogCard.svelte'
 
-const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
-	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
-);
-const content = {};
+const metaData = {title:'404 Not Found'};
 ---
 
-<Layout content={content}>
+<Layout {...metaData}>
 	<h1>Error 404 Oh no! 😨</h1>
 	<p>The page you intended to visit was not found. <br />
 		Let us pray to St. Anthony to help us find it 🙏🏾.

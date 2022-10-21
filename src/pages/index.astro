@@ -1,20 +1,37 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import BlogCard from '../components/BlogCard.svelte'
+import NewsCard from '../components/NewsCard.svelte'
 
-const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
-	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
-);
-const content = {};
+const posts = (await Astro.glob('./news/*.{md,mdx}')).sort(
+	(a, b) =>
+		new Date(
+			b.frontmatter.updateDate
+				? b.frontmatter.updateDate
+				: b.frontmatter.pubDate
+		).valueOf() -
+		new Date(
+			a.frontmatter.updateDate
+				? a.frontmatter.updateDate
+				: a.frontmatter.pubDate
+		).valueOf()
+)
 ---
 
-<Layout content={content}>
+<Layout>
 	<ul>
-		{posts.map((post) => (
-			<li>
-				<BlogCard title={post.frontmatter.title} url={post.url} image={post.frontmatter.heroImage} pubDate={post.frontmatter.pubDate}/>
-			</li>
-		))}
+		{
+			posts.map(post => (
+				<li>
+					<NewsCard
+						title={post.frontmatter.title}
+						url={post.url}
+						image={post.frontmatter.heroImage}
+						pubDate={post.frontmatter.pubDate}
+						updateDate={post.frontmatter.updateDate}
+					/>
+				</li>
+			))
+		}
 	</ul>
 </Layout>
 

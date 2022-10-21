@@ -1,16 +1,16 @@
 ---
 import Layout from '../layouts/Layout.astro'
 // import '../style/variables.scss'
-const content = {
+const metaData = {
 	title: 'Chaplains',
 	desciption: 'The chaplains of the Syro Malaber Community Vienna',
 }
 ---
 
-<Layout content={content}>
+<Layout {...metaData}>
 	<h1>Chaplains</h1>
 	<section>
-		<img src="/assets/meta-image.png" alt="Portrait of Pater Dr. Thomas Thandapilly" width="150" height="200">
+		<img src={`${import.meta.env.PUBLIC_ASSETS}/images/chaplains/frthomas.jpg`} alt="Portrait of Pater Dr. Thomas Thandapilly" width="150" height="200">
 		<div class="text">
 			<h2>Pater Dr. Thomas Thandapilly CST</h2>
 			<h3>Chaplain <span lang="de">(Seelsorger)</span></h3>
@@ -24,7 +24,7 @@ const content = {
 	</section>
 
 	<section>
-		<img src="/assets/meta-image.png" alt="Portrait of Pater Dr. Thomas Thandapilly" width="150" height="200">
+		<img src={`${import.meta.env.PUBLIC_ASSETS}/images/chaplains/fr_mecheril.jpg`} alt="Portrait of Pater Dr. Thomas Thandapilly" width="150" height="200">
 		<div class="text">
 			<h2>Pater Mathew Mecheril MCBS (Wilson)</h2>
 			<h3>Assistant Chaplain <span lang="de">(Aushilfe Seelsorger)</span></h3>

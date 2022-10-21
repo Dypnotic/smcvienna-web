@@ -23,8 +23,8 @@
 			url: '/chaplains'
 		},
 		{
-			name: 'Pastoral Council',
-			url: '/pastoral-council'
+			name: 'Council',
+			url: '/council'
 		},
 		{
 			name: 'Catechism',
