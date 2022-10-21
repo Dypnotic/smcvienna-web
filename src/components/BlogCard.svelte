@@ -31,7 +31,7 @@
 		border-radius: 2px;
 		color: var(--color-text);
 		:hover {
-			color: var(--color-bg);
+			color: inherit;
 		}
 	}
 	h2 {
