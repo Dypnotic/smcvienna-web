@@ -132,7 +132,7 @@ const financialCouncil: ProfileProp[] = [
 				pastoralCouncil.map(member => (
 
 					<Profile
-					image={`${import.meta.env.PUBLIC_ASSETS}/images/profiles${member.img}`}
+					image={`${import.meta.env.PUBLIC_ASSETS}images/profiles${member.img}`}
 					name={member.name}
 					role={member.role}
 					roleTranslation={member.roleTranslation}
@@ -148,7 +148,7 @@ const financialCouncil: ProfileProp[] = [
 				financialCouncil.map(member => (
 
 					<Profile
-					image={`${import.meta.env.PUBLIC_ASSETS}/images/profiles${member.img}`}
+					image={`${import.meta.env.PUBLIC_ASSETS}images/profiles${member.img}`}
 					name={member.name}
 					role={member.role}
 					roleTranslation={member.roleTranslation}
@@ -243,6 +243,7 @@ const financialCouncil: ProfileProp[] = [
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(218px, 1fr));
 		grid-template-rows: 1fr auto;
+		justify-items: center;
 		gap: 32px;
 	}
 	ul {

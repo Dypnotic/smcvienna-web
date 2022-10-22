@@ -20,8 +20,6 @@
 		padding: 24px 0;
 	}
 	.bottom {
-		position: sticky;
-		bottom: 24px;
-		justify-self: end;
+		padding-top: 16px;
 	}
 </style>

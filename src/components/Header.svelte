@@ -139,7 +139,7 @@
 		bottom: 0;
 		left: -100vh;
 		-webkit-backdrop-filter: blur(15px);
-		backdrop-filter: blur(15px);
+		backdrop-filter: blur(15px) brightness(80%);
 		transition: left 0.3s ease-in-out;
 		@media screen and (min-width: variables.$max-width) {
 			display: none;

@@ -1,15 +1,19 @@
 <script lang="ts">
 	export let image: string
 	export let name: string
-	export let role: string
-	export let roleTranslation: string
+	export let role: string | undefined
+	export let roleTranslation: string | undefined
 </script>
 
 <div>
 	<img src={image} alt={`Photo of ${name}`} />
 	<span class="name"><em>{name}</em></span> <br />
-	<span class="role">{role}</span> <br />
-	<span lang="de" class="role-translation">{roleTranslation}</span>
+	{#if role}
+		<span class="role">{role}</span> <br />
+	{/if}
+	{#if roleTranslation}
+		<span lang="de" class="role-translation">{roleTranslation}</span>
+	{/if}
 </div>
 
 <style>
@@ -36,6 +40,6 @@
 		letter-spacing: 1px;
 	}
 	.role-translation {
-		color: var(--color-text-faded)
+		color: var(--color-text-faded);
 	}
 </style>
