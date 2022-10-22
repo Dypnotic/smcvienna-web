@@ -1,76 +1,90 @@
 ---
-import "@fontsource/noto-serif-malayalam/400.css"
-import "@fontsource/noto-serif-malayalam/700.css"
-import "@fontsource/noto-serif/400.css"
-import "@fontsource/noto-serif/700.css"
+import '@fontsource/noto-serif-malayalam/400.css'
+import '@fontsource/noto-serif-malayalam/700.css'
+import '@fontsource/noto-serif/400.css'
+import '@fontsource/noto-serif/700.css'
 import Header from '../components/Header.svelte'
+import Sidebar from '../components/Sidebar.svelte'
 export interface Props {
-	title: string;
+	title?: string
+	description?: string
+	pubDate?: string
+	updatedDate?: string
+	heroImage?: string
 }
-
-const { title } = Astro.props;
+const {
+	title = 'SMC Vienna',
+	description = 'Welcome to the Syro Malabar Community Vienna Website.',
+	pubDate,
+	updatedDate = pubDate,
+	heroImage = '/assets/meta-image.png',
+} = Astro.props
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<meta charset='UTF-8' />
+		<meta name='viewport' content='width=device-width, initial-scale=1.0' />
+		<link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+		<meta name='generator' content={Astro.generator} />
+		<meta name='description' content={description} />
+		<meta
+			name='keywords'
+			content='Christian, Syro Malabar Community, Vienna, SMC, Catholic, Indian, Kerala, Malayalam, Malayalee, Church'
+		/>
+		<meta name='author' content='Jens Cherukad' />
+
+		<meta property='og:title' content={title} />
+		<meta property='og:type' content='website' />
+		<meta property='og:description' content={description} />
+		<meta property='og:image' content={heroImage} />
+		<meta property='og:url' content={Astro.request.url} />
+		<meta name='twitter:card' content='summary_large_image' />
+
 		<title>{title}</title>
 	</head>
 	<body>
-		<div class="wrapper">
-			<Header client:load/>
-			<main>
-				<slot />
-			</main>
+		<div class='header'>
+			<Header client:load />
 		</div>
+		<div class='sidebar'>
+			<Sidebar />
+		</div>
+		<main>
+			<slot />
+		</main>
 	</body>
+	<style lang='scss' is:global>
+		@use '../style/base';
+		@use '../style/variables';
+
+		.header {
+			grid-area: header;
+			position: sticky;
+			top: 0;
+			@media (min-width: variables.$max-width) {
+				position: static;
+			}
+		}
+
+		.sidebar {
+			display: none;
+			grid-area: sidebar;
+			position: sticky;
+			top: 16px;
+			@media (min-width: variables.$max-width) {
+				display: block;
+			}
+		}
+
+		main {
+			padding: 16px;
+			width: 100%;
+			grid-area: main;
+			display: flex;
+			flex-direction: column;
+			gap: 32px;
+		}
+	</style>
 </html>
-
-<style lang='scss' is:global>
-
-	:root {
-		--font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
-		--font-size-lg: clamp(1.2rem, 0.7vw + 1.2rem, 1.5rem);
-		--font-size-xl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
-
-		--color-text: hsl(266, 37%, 7%);
-		--color-bg: rgb(216, 208, 202);
-	}
-	*{
-		box-sizing: border-box;
-	}
-
-	html {
-    font-family: "Noto Serif", serif;
-		font-size: var(--font-size-base);
-		color: var(--color-text);
-		background-color: var(--color-bg);
-		width: 100%;
-	}
-
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-	.wrapper {
-		padding: 1rem;
-		width: 100%;
-		max-width: 1000px;
-	}
-	[lang="ml"] {
-			font-family: "Noto Serif Malayalam", serif;
-	}
-	
-	img {
-		max-width: 100%;
-	}
-
-</style>

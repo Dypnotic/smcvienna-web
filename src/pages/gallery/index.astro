@@ -1,0 +1,30 @@
+---
+import GalleryCard from '../../components/GalleryCard.svelte'
+import Layout from '../../layouts/Layout.astro'
+
+const metaData = {
+	title: 'Gallery',
+	desciption: 'Photos of various Syro Malabar Community events.',
+}
+---
+
+<Layout {...metaData}>
+	<h1>Gallery</h1>
+	<div class='grid'>
+		<GalleryCard
+			title='Medjugorge Pilgrimage'
+			url='/gallery/2022/2022-oct-medjugorge-pilgrimage'
+			image={`${
+				import.meta.env.PUBLIC_ASSETS
+			}/images/2022/2022-oct-medjugorge-pilgrimage/thumbnails/1.jpg`}
+			imageAlt='Medjugorge Pilgrimage 2022'
+		/>
+	</div>
+</Layout>
+<style lang='scss'>
+	.grid {
+		display: flex;
+		flex-flow: row wrap;
+		gap: 32px;
+	}
+</style>

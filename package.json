@@ -1,23 +1,28 @@
 {
-  "name": "@example/basics",
-  "type": "module",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@astrojs/image": "^0.7.0",
-    "@astrojs/mdx": "^0.11.1",
-    "@astrojs/svelte": "^1.0.0",
-    "@fontsource/noto-serif": "^4.5.10",
-    "@fontsource/noto-serif-malayalam": "^4.5.10",
-    "astro": "^1.2.4",
-    "sass": "^1.55.0",
-    "svelte": "^3.46.4"
-  }
+	"name": "smc-vienna-website",
+	"type": "module",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@astrojs/mdx": "^0.11.4",
+		"@astrojs/svelte": "^1.0.2",
+		"@fontsource/noto-serif": "^4.5.11",
+		"@fontsource/noto-serif-malayalam": "^4.5.11",
+		"astro": "^1.5.0",
+		"photoswipe": "^5.3.2",
+		"sass": "^1.55.0",
+		"svelte": "^3.52.0"
+	},
+	"devDependencies": {
+		"prettier": "2.7.1",
+		"prettier-plugin-astro": "0.6.0",
+		"prettier-plugin-svelte": "2.8.0"
+	}
 }

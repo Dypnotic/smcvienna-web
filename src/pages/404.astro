@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const metaData = {title:'404 Not Found'};
+---
+
+<Layout {...metaData}>
+	<h1>Error 404 Oh no! 😨</h1>
+	<p>The page you intended to visit was not found. <br />
+		Let us pray to St. Anthony to help us find it 🙏🏾.
+	</p>
+	<p>
+		In the meantime, check out our latest <a href="/">news.</a>
+	</p>
+
+</Layout>
+
+<style>
+	ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		margin: 0;
+		padding: 0;
+	}
+</style>

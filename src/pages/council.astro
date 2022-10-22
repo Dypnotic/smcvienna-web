@@ -1,0 +1,255 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Profile from '../components/Profile.svelte'
+interface ProfileProp {
+	img: string
+	name: string
+	role: string
+	roleTranslation: string
+}
+
+const metaData = {
+	title: 'Council',
+	desciption:
+		'Here you can find the structure of our pastoral and financial council, as well as other other roles filled by our members.',
+}
+
+const pastoralCouncil: ProfileProp[] = [
+	{
+		img: '/thomas-thandappilly.jpg',
+		name: 'P. Dr.Thomas Thandappilly CST',
+		role: 'Chaplain',
+		roleTranslation: 'Vorsitz',
+	},
+	{
+		img: '/wilson-mecheril.jpg',
+		name: 'P. Wilson Mecheril MCBS',
+		role: 'Chaplain',
+		roleTranslation: 'Assistant Chaplain',
+	},
+	{
+		img: '/joshi-abraham-mullankuzhi.jpg',
+		name: 'Mr. Joshi Abraham Mullankuzhi',
+		role: 'Pastoral Convener',
+		roleTranslation: 'Stellver. Vorsitzender',
+	},
+	{
+		img: '/anton-tom-athithara.jpg',
+		name: 'Mr. Anton Tom Athithara',
+		role: 'Pastoral Secretary',
+		roleTranslation: 'Schriftsteller',
+	},
+	{
+		img: '/daisy-alany.jpg',
+		name: 'Mrs. Daisy Alany',
+		role: 'Catechism',
+		roleTranslation: 'Katechismus',
+	},
+	{
+		img: '/jincy-maliyampurackal.jpg',
+		name: 'Mrs. Jincy Maliyampurackal',
+		role: 'Liturgy in Maria Lourdes, Meidling',
+		roleTranslation: 'Liturgie in Maria Lourdes',
+	},
+	{
+		img: '/boby-kanjirathumoottil.jpg',
+		name: 'Mr. Boby Kanjirathumoottil',
+		role: 'Liturgy in Auf. Christi, Saikogasse',
+		roleTranslation: 'Liturgie in Auf. Christi',
+	},
+	{
+		img: '/roy-jacob-vellukunnel.jpg',
+		name: 'Mr. Roy Jacob Vellukunnel',
+		role: 'Pastoral & Spiritual Services',
+		roleTranslation: 'Verkündigung',
+	},
+	{
+		img: '/greshma-pallikunnel.jpg',
+		name: 'Mrs. Greshma Pallikunnel',
+		role: 'Youth Services',
+		roleTranslation: 'Jugend Forum',
+	},
+	{
+		img: '/philomina-ayiramala.jpg',
+		name: 'Mrs. Philomina Ayiramala',
+		role: 'Pithru & Mathru Vedhi ',
+		roleTranslation: 'Familie Apostolat',
+	}
+]
+
+const financialCouncil: ProfileProp[] = [
+	{
+		img: '/thomas-thandappilly.jpg',
+		name: 'P. Dr.Thomas Thandappilly CST',
+		role: 'President',
+		roleTranslation: 'Vorsitz',
+	},
+	{
+		img: '/boby-kanjirathumoottil.jpg',
+		name: 'Mr. Boby Kanjirathumoottil',
+		role: 'Financial Convener',
+		roleTranslation: 'Stellvertretender Vorsitz',
+	},
+	{
+		img: '/shoji-veliyath.jpg',
+		name: 'Mr. Boby Kanjirathumoottil',
+		role: 'Financial Secretary',
+		roleTranslation: 'Finanzsekretär',
+	},
+	{
+		img: '/mathew-adackamukkil.jpg',
+		name: 'Mr. Mathew Adackamukkil',
+		role: 'FC Member',
+		roleTranslation: 'WKR Mitglieder',
+	},
+	{
+		img: '/philomina-ayiramala.jpg',
+		name: 'Mrs. Philomina Ayiramala',
+		role: 'FC Member',
+		roleTranslation: 'WKR Mitglieder',
+	},
+	{
+		img: '/boban-kalapurackal.jpg',
+		name: 'Mr. Boban Kalapurackal',
+		role: 'FC Member',
+		roleTranslation: 'WKR Mitglieder',
+	},
+	{
+		img: '/joseph-olimalayil.jpg',
+		name: 'Mr. Joseph Olimalayil',
+		role: 'FC Member',
+		roleTranslation: 'WKR Mitglieder',
+	},
+]
+---
+
+<Layout {...metaData}>
+	<h1>Councils</h1>
+	<section>
+		<h2>SMC Pastoral Council 2022 - 2027</h2>
+		<div class='council'>
+			{
+				pastoralCouncil.map(member => (
+
+					<Profile
+					image={`${import.meta.env.PUBLIC_ASSETS}/images/profiles${member.img}`}
+					name={member.name}
+					role={member.role}
+					roleTranslation={member.roleTranslation}
+					/>
+				))
+			}
+		</div>
+	</section>
+	<section>
+		<h2>SMC Financial Council 2022 - 2027</h2>
+		<div class='council'>
+			{
+				financialCouncil.map(member => (
+
+					<Profile
+					image={`${import.meta.env.PUBLIC_ASSETS}/images/profiles${member.img}`}
+					name={member.name}
+					role={member.role}
+					roleTranslation={member.roleTranslation}
+					/>
+				))
+			}
+		</div>
+	</section>
+	<section>
+		<h3>SMC Auditors</h3>
+		<p><em>Paulose Vettickal</em> & <em>James Philip Kayyalaparambil</em></p>
+	</section>
+	<section>
+		<h2>SMC Services for the next Five Years</h2>
+		<ul>
+			<li>
+				Master of Ceremony at Solemn Liturgical Events in Maria Lourdes: <em
+					>Winson Kallikadan</em
+				>
+			</li>
+			<li>Custodian of SMC Data Information: <em>Steephen Chevookaran</em></li>
+			<li>
+				Conveners of SMC Family Registration: <em>Joseph Olimalayil</em> in Maria
+				Lourdes <br />
+				<em>Steephen Chevookaran</em> in Saikogasse
+			</li>
+			<li>
+				Convener of SMC Catechism in Unit of Maria Lourdes: <em
+					>Boban Kalapurackal</em>
+			</li>
+			<li>
+				Convener of the Team of Altar Boys/Girls in Maria Lourdes: <em
+					>Christi Kalapurackal</em>
+			</li>
+			<li>
+				Convener of the Team of Altar Boys/Girls in Auf. Christi: to be
+				announced later
+			</li>
+			<li>Convener of the SMC School Kairali Nikethan: <em>Ebby Kurian</em></li>
+			<li>
+				SMC Choir: Team to be formed by a Core Team of PC Convener, <em
+					>Assist. Chaplain and Chaplain</em>
+			</li>
+			<li>SMC Mesner in Maria Lourdes: <em>Cherian Maliyampurackal</em></li>
+			<li>
+				SMC Unit of Pithruvedi in Maria Lourdes: <em>Mathew Adackamukkil</em> (Convener),
+				Binoy Kunnumpuram, Vincent Payyappilly
+			</li>
+			<li>
+				SMC Unit of Pithruvedi in Auf. Chrisiti Saikogasse: <em
+					>Roy Iykerattu</em
+				> (Convener),
+				<em>Johny Kappany</em>, <em>Antony Madhavappillil</em>
+			</li>
+			<li>
+				SMC Unit of Mathruvedi in Maria Lourdes: <em>Jincy Maliyampurackal</em> (Convener),
+				<em>Jancy Kuruthukulangara</em>, <em>Shyni Karimpukalayil</em>
+			</li>
+			<li>
+				SMC Unit of Mathruvedi in Auf. Christi Saikogasse: <em
+					>Tania Arumantharayil</em
+				> (Convener), <em>Teena Simi Padua</em>, <em>Nerin Elsa George</em>
+			</li>
+			<li>
+				SMC Unit of Junior Youth Forum in Maria Lourdes: <em>Roshan George</em>, <em
+					>Sandra Mullappilly</em
+				>, (<em>Boban Kalapurackal</em> – Convener)
+			</li>
+			<li>
+				SMC Unit of Junior Youth Forum in Auf. Christi Saikogasse: <em
+					>Arav Jeevan John</em
+				>, <em>Nikita Joby Jose</em>, (<em>Daisy Alany</em> – Convener)
+			</li>
+			<li>
+				SMC Convener of Charity Services: <em>Joshi Abraham Mullankuzhi</em>, PC
+				Convener
+			</li>
+			<li>
+				Person for SMC Vigilance and Care of the Minors: <em>Daisy Alany</em>
+			</li>
+			<li>SMC web developer: <em>Jens Cherukad</em></li>
+		</ul>
+		<p>
+			P. Thomas Thandappilly CST <br />
+			SMC Chaplain<br />
+			Vienna, 1st May 2022
+		</p>
+	</section>
+</Layout>
+<style>
+	.council {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(218px, 1fr));
+		grid-template-rows: 1fr auto;
+		gap: 32px;
+	}
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		list-style: circle;
+		padding: 0 12px;
+	}
+</style>

@@ -1,16 +1,47 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro'
+import NewsCard from '../components/NewsCard.svelte'
+
+const posts = (await Astro.glob('./news/*.{md,mdx}')).sort(
+	(a, b) =>
+		new Date(
+			b.frontmatter.updateDate
+				? b.frontmatter.updateDate
+				: b.frontmatter.pubDate
+		).valueOf() -
+		new Date(
+			a.frontmatter.updateDate
+				? a.frontmatter.updateDate
+				: a.frontmatter.pubDate
+		).valueOf()
+)
 ---
 
-<Layout title="Welcome to SMC Vienna.">
-		<h1>Welcome to the new Syro Malaber Community Vienna Website</h1>
-
-		<p>We are currently in the process of building this site and will be available for you soon!</p>
+<Layout>
+	<ul>
+		{
+			posts.map(post => (
+				<li>
+					<NewsCard
+						title={post.frontmatter.title}
+						url={post.url}
+						image={post.frontmatter.heroImage}
+						pubDate={post.frontmatter.pubDate}
+						updateDate={post.frontmatter.updateDate}
+					/>
+				</li>
+			))
+		}
+	</ul>
 </Layout>
 
 <style>
-	h1 {
-		margin: 2rem 0;
+	ul {
+		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+		margin: 0;
+		padding: 0;
 	}
-
 </style>
