@@ -35,8 +35,20 @@
 			url: '/marriage-preparation'
 		},
 		{
+			name: 'Kairali Nikethan',
+			url: '/kairali-nikethan'
+		},
+		{
+			name: 'Youth',
+			url: '/youth'
+		},
+		{
 			name: 'Gallery',
 			url: '/gallery'
+		},
+		{
+			name: 'Downloads',
+			url: '/downloads'
 		}
 	]
 </script>

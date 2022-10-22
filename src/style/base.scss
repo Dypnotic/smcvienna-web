@@ -17,7 +17,7 @@
 	--color-lines: rgb(182 177 166);
 	--color-links: rgb(123 53 204);
 	--color-emphesize: rgb(14, 122, 112);
-	
+
 	@media (prefers-color-scheme: dark) {
 		--color-text: rgb(231, 217, 195);
 		--color-text-faded: rgb(165, 162, 158);
@@ -27,7 +27,6 @@
 		--color-emphesize: rgb(49 170 102);
 	}
 }
-
 
 @keyframes gradientAnimation {
 	0% {
@@ -80,7 +79,7 @@
 	margin-bottom: 1rem;
 }
 :where(h2) {
-	margin-bottom: .5rem;
+	margin-bottom: 0.5rem;
 }
 
 :where(em) {
@@ -89,24 +88,27 @@
 	color: var(--color-emphesize);
 }
 
-:where(img) {
+:where(img, iframe) {
 	max-width: 100%;
+	object-fit: contain;
 }
 
 :where(a) {
 	text-decoration: none;
-	background: linear-gradient(var(--color-links) 0 0)
-		calc(100% - var(--p, 0%)) / var(--p, 0%) no-repeat;
-	transition: 0.4s, background-position 0s;
+	background-color: var(--color-bg);
+	transition: color 0.4s, background-color 0.4s;
 	color: var(--color-links);
 	padding: 0 5px;
 	&:hover,
 	&:active {
-		--p: 100%;
 		color: var(--color-bg);
+		background-color: var(--color-links);
 	}
 }
 
+:where(ul, ol) {
+	line-height: 2;
+}
 :where(address) {
 	font-size: 0.9rem;
 	font-style: normal;

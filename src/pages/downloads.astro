@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro'
+
+const metaData = {
+	title: 'Downloads',
+	desciption: 'Here you can find all forms for download.',
+}
+---
+
+<Layout {...metaData}>
+	<h1>Downloads</h1>
+	<section>
+		<h2>Family Registration</h2>
+		<p>
+			The filled up Form must be given personally to any of the following
+			persons: (in Meidling:) Mr. Jose Olimalayil; (in Saikogasse:) Mr. Steephen
+			Chevookaran. A contribution of Euro 30,- is expected to give per family.
+		</p>
+		<a href={`${import.meta.env.PUBLIC_ASSETS}/documents/family_registration.pdf`} download="">Download form 📄</a>
+	</section>
+</Layout>
+
+<style>
+	a {
+		border-radius: 2px;
+		border: 1px solid var(--color-text);
+		padding: 8px 16px;
+		background-color: var(--color-text);
+		color: var(--color-bg);
+		font-size: .8rem;
+		text-transform: uppercase;
+	}
+</style>
