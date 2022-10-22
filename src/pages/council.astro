@@ -1,19 +1,66 @@
 ---
 import Layout from '../layouts/Layout.astro'
-
+import Profile from '../components/Profile.svelte'
 const metaData = {
 	title: 'Council',
 	desciption:
 		'Here you can find the structure of our pastoral and financial council, as well as other other roles filled by our members.',
 }
+
+
 ---
 
 <Layout {...metaData}>
 	<h1>Councils</h1>
 	<section>
 		<h2>SMC Pastoral Council 2022 - 2027</h2>
+		<Profile
+			image={`${import.meta.env.PUBLIC_ASSETS}/images/chaplains/frthomas.jpg`}
+			name='Robert Testman'
+			role='Counselor'
+			roleTranslation="Kanzler"
+		></Profile>
 	</section>
 	<section>
 		<h2>SMC Financial Council 2022 - 2027</h2>
 	</section>
+	<section>
+		<h2>SMC Services for the next Five Years</h2>
+		<ul>
+			<li>Master of Ceremony at Solemn Liturgical Events in Maria Lourdes: <em>Winson Kallikadan</em> </li>
+			<li>Custodian of SMC Data Information: <em>Steephen Chevookaran</em> </li>
+			<li>Conveners of SMC Family Registration: <em>Joseph Olimalayil</em> in Maria Lourdes <br />
+				 <em>Steephen Chevookaran</em> in Saikogasse </li>
+			<li>Convener of SMC Catechism in Unit of Maria Lourdes: Boban Kalapurackal</li>
+			<li>Convener of the Team of Altar Boys/Girls in Maria Lourdes: Christi Kalapurackal</li>
+			<li>Convener of the Team of Altar Boys/Girls in Auf. Christi: to be announced later </li>
+			<li>Convener of the SMC School Kairali Nikethan: Ebby Kurian </li>
+			<li>SMC Choir: Team to be formed by a Core Team of PC Convener, Assist. Chaplain and Chaplain</li>
+			<li>SMC Mesner in Maria Lourdes: Cherian Maliyampurackal</li>
+			<li>SMC Unit of Pithruvedi in Maria Lourdes: Mathew Adackamukkil (Convener),
+					Binoy Kunnumpuram, Vincent Payyappilly </li>
+			<li>SMC Unit of Pithruvedi in Auf. Chrisiti Saikogasse: Roy Iykerattu (Convener),
+					Johny Kappany, Antony Madhavappillil </li>
+			<li>SMC Unit of Mathruvedi in Maria Lourdes: Jincy Maliyampurackal (Convener),
+					Jancy Kuruthukulangara, Shyni Karimpukalayil </li>
+			<li>SMC Unit of Mathruvedi in Auf. Christi Saikogasse: Tania Arumantharayil (Convener), Teena Simi Padua, Nerin Elsa George </li>
+			<li>SMC Unit of Junior Youth Forum in Maria Lourdes: Roshan George, Sandra Mullappilly, (Boban Kalapurackal – Convener)</li>
+			<li>SMC Unit of Junior Youth Forum in Auf. Christi Saikogasse: Arav Jeevan John, Nikita Joby Jose, (Daisy Alany – Convener) </li>
+			<li>SMC Convener of Charity Services: Joshi Abraham Mullankuzhi, PC Convener </li>
+			<li>Person for SMC Vigilance and Care of the Minors: Daisy Alany </li>
+			<li>SMC Webdeveloper: Jens Cherukad</li>
+		</ul>
+		<p> P. Thomas Thandappilly CST <br />
+			SMC Chaplain<br />
+			Vienna, 1st May 2022</p>
+	</section>
 </Layout>
+<style>
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		list-style: circle;
+		padding: 0 12px;
+	}
+</style>
