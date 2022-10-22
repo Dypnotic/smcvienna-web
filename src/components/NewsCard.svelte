@@ -10,7 +10,7 @@
 
 <a href={url} class="blog-card">
 	{#if image !== ''}
-		<img src={image} alt={imageAlt} width="684" height="360" class:obituary={obituary}/>
+		<img src={`${import.meta.env.PUBLIC_ASSETS}${image}`} alt={imageAlt} width="684" height="360" class:obituary={obituary}/>
 	{/if}
 	{#if pubDate === updateDate}
 	<time datetime={pubDate}>
@@ -44,16 +44,13 @@
 		padding: 16px;
 		border-radius: 2px;
 		color: var(--color-text);
-		:hover {
-			color: inherit;
-		}
 	}
 	h2 {
 		margin: 0;
 	}
 	time {
 		font-size: .8rem;
-		color: var(--color-text-faded);
+		color: var(--color-text);
 		letter-spacing: 1px;
 	}
 </style>

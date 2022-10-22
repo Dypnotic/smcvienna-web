@@ -1,0 +1,30 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'Medjugorge Pilgrimage',
+	desciption: 'Photos of the Medjugorge Pilgrimage in October 2022.',
+}
+
+const amountOfImages = 123;
+
+let images = [];
+
+for (let i = 1; i <= amountOfImages; i++) {
+	images.push(            {
+              largeURL:
+                `${import.meta.env.PUBLIC_ASSETS}/images/2022/2022-oct-medjugorge-pilgrimage/${i}.jpg`,
+              thumbnailURL:
+                `${import.meta.env.PUBLIC_ASSETS}/images/2022/2022-oct-medjugorge-pilgrimage/thumbnails/${i}.jpg`,
+              width: 1200,
+              height: 800,
+            }
+						)
+}
+---
+
+<Layout {...metaData}>
+	<h1>Medjugorge Pilgrimage</h1>
+  	<Gallery client:load galleryID="oct-2022-medjugorge-pilgrimage" images={images} />
+</Layout>

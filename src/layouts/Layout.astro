@@ -61,6 +61,11 @@ const {
 
 		.header {
 			grid-area: header;
+			position: sticky;
+			top: 0;
+			@media (min-width: variables.$max-width) {
+				position: static;
+			}
 		}
 
 		.sidebar {

@@ -31,8 +31,12 @@
 			url: '/catechism'
 		},
 		{
-			name: 'About',
-			url: '/about'
+			name: 'Marriage Preparation',
+			url: '/marriage-preparation'
+		},
+		{
+			name: 'Gallery',
+			url: '/gallery'
 		}
 	]
 </script>
@@ -49,6 +53,7 @@
 	nav {
 		width: 100%;
 		height: 100%;
+		overflow: auto;
 	}
 	ul {
         margin: 0;
