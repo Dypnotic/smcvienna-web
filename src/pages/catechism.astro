@@ -71,6 +71,98 @@ const metaData = {
 			catechism in both centers.
 		</p>
 	</section>
+
+	<div class='timetable'>
+		<table>
+			<thead>
+				<tr>
+					<th>Sep</th>
+					<th>Oct</th>
+					<th>Nov</th>
+					<th>Dec</th>
+					<th>Jan</th>
+					<th>Feb</th>
+					<th>Mar</th>
+					<th>Apr</th>
+					<th>May</th>
+					<th>Jun</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>18</td>
+					<td>02</td>
+					<td>06</td>
+					<td>04</td>
+					<td><em>01*</em></td>
+					<td><em>05*</em></td>
+					<td>05</td>
+					<td><em>02*</em></td>
+					<td>07</td>
+					<td>04<br /></td>
+				</tr>
+				<tr>
+					<td>25</td>
+					<td><em>09*</em></td>
+					<td>13</td>
+					<td><em>11*</em></td>
+					<td>08</td>
+					<td>12</td>
+					<td>12</td>
+					<td><em>09*</em></td>
+					<td>14</td>
+					<td><em>11 Exam</em></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>16</td>
+					<td>20</td>
+					<td>18</td>
+					<td>15</td>
+					<td>19</td>
+					<td>19</td>
+					<td>16</td>
+					<td><em>21*</em></td>
+					<td>18</td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><em>23*</em></td>
+					<td>27</td>
+					<td>25</td>
+					<td><em>22 Exam</em></td>
+					<td>26</td>
+					<td>26</td>
+					<td>23</td>
+					<td><em>28*</em><br /></td>
+					<td></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td>30</td>
+					<td></td>
+					<td></td>
+					<td>29</td>
+					<td></td>
+					<td></td>
+					<td>30</td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+	<p class="special-dates">
+		Oct. 23: Jubilee<br />
+		Dec. 11: Carol<br />
+		Dec. 25, Jan.01: Christmas holidays<br />
+		Jan. 22: Exam; Feb. 05: Sem.Vacation<br />
+		Apr. 2: Palm Sunday<br />
+		Apr. 9: Easter; May 21: First Holy Communion<br />
+		May 28: Confirmation<br />
+		June 11: Exam </p>
+
 	<section>
 		<h2>Parents please note the following</h2>
 		<ol>
@@ -107,3 +199,23 @@ const metaData = {
 		Email: <a href='mailto:shajiboban@hotmail.com'>shajiboban@hotmail.com</a>
 	</section>
 </Layout>
+<style lang='scss'>
+	
+	.timetable {
+		overflow-x: auto;
+	}
+
+	.special-dates {
+		columns: 250px 2;
+		margin: 0;
+	}
+	table {
+		text-align: center;
+		border-collapse: collapse;
+	}
+	td,
+	th {
+		padding: 8px 16px;
+		border: 1px solid var(--color-text-faded);
+	}
+</style>

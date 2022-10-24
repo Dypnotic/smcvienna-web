@@ -18,6 +18,7 @@ const posts = (await Astro.glob('./news/*.{md,mdx}')).sort(
 ---
 
 <Layout>
+	<h1>News</h1>
 	<ul>
 		{
 			posts.map(post => (
