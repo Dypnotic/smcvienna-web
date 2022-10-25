@@ -53,7 +53,7 @@ CSS pre-processor: SCSS
 
 JavaScript pre-processor: TypeScript
 
-Blog posts written in: MDX
+News posts written in: MDX
 
 ### 🚀 Deployment
 
