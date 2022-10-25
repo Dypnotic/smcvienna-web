@@ -1,0 +1,31 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'Ruby Jubilee Event 2022',
+	desciption: 'Photos of the Ruby Jubilee Event 2022 in October 2022.',
+}
+
+const amountOfImages = 10;
+
+let images = [];
+
+for (let i = 1; i <= amountOfImages; i++) {
+	images.push(            {
+              largeURL:
+                `${import.meta.env.PUBLIC_ASSETS}images/2022/2022-oct-ruby-jubilee-event/${i}.jpg`,
+              thumbnailURL:
+                `${import.meta.env.PUBLIC_ASSETS}images/2022/2022-oct-ruby-jubilee-event/thumbnails/${i}.jpg`,
+              width: 1200,
+              height: 800,
+            }
+						)
+}
+---
+
+<Layout {...metaData}>
+	<h1>Medjugorge Pilgrimage</h1>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/VPcXISvY0a8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  	<Gallery client:load galleryID="oct-2022-medjugorge-pilgrimage" images={images} />
+</Layout>
