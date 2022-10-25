@@ -8,7 +8,7 @@
 	export let updateDate = pubDate;
 </script>
 
-<a href={url} class="blog-card">
+<a href={url} class="news-card">
 	{#if image !== ''}
 		<img src={`${import.meta.env.PUBLIC_ASSETS}${image}`} alt={imageAlt} width="684" height="360" class:obituary={obituary}/>
 	{/if}
@@ -31,6 +31,7 @@
 	</time>
 	{/if}
 	<h2>{title}</h2>
+	<button type='button'>Open the {title} post</button>
 </a>
 <style lang='scss'>
 	img{
@@ -40,6 +41,7 @@
 		border: 1px solid var(--color-text-faded);
 		display: flex;
 		flex-direction: column;
+		align-items: flex-start;
 		gap: 8px;
 		padding: 16px;
 		border-radius: 2px;
@@ -52,5 +54,8 @@
 		font-size: .8rem;
 		color: var(--color-text);
 		letter-spacing: 1px;
+	}
+	button {
+		flex-shrink: 1;
 	}
 </style>
