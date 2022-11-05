@@ -15,16 +15,17 @@
 		object-fit: contain;
 	}
 	a {
-		border: 1px solid var(--color-text-faded);
 		display: flex;
 		flex-direction: column;
 		gap: 8px;
 		padding: 16px;
-		border-radius: 2px;
+		background-color: var(--color-bg-l2);
+		border-radius: 4px;
 		color: var(--color-text);
 		width: 182px;
-		:hover {
-			color: inherit;
+		&:hover {
+			box-shadow: 0 6px 6px var(--color-shadow);
+			background-color: var(--color-bg-l3);
 		}
 	}
 	h2 {

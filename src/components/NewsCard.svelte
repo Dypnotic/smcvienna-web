@@ -38,14 +38,20 @@
 		object-fit: contain;
 	}
 	a {
-		border: 1px solid var(--color-text-faded);
 		display: flex;
 		flex-direction: column;
 		align-items: flex-start;
 		gap: 8px;
 		padding: 16px;
-		border-radius: 2px;
+		border-radius: 4px;
 		color: var(--color-text);
+		box-shadow: 0 4px 4px var(--color-shadow);
+		background-color: var(--color-bg-l2);
+		transition: box-shadow .3s ease, background-color .3s ease;
+		&:hover {
+			box-shadow: 0 6px 6px var(--color-shadow);
+			background-color: var(--color-bg-l3);
+		}
 	}
 	h2 {
 		margin: 0;

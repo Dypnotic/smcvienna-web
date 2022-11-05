@@ -21,9 +21,10 @@
 		display: flex;
 		flex-direction: column;
 		width: 218px;
-		padding: 8px;
-		border: 1px solid var(--color-text-faded);
-		border-radius: 2px;
+		padding: 16px;
+		border-radius: 4px;
+		background-color: var(--color-bg-l2);
+		box-shadow: 0 4px 4px var(--color-shadow);
 		gap: 3px;
 	}
 	img {
