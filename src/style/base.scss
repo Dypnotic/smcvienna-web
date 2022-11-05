@@ -17,8 +17,8 @@
 	--color-bg-l2: rgb(208, 191, 179);
 	--color-bg-l3: rgb(204, 180, 164);
 	--color-lines: rgb(182 177 166);
-	--color-links: rgb(123 53 204);
-	--color-emphesize: rgb(14, 122, 112);
+	--color-links: rgb(83, 26, 149);
+	--color-emphesize: rgb(0, 53, 153);
 	--color-shadow: rgb(0 0 0 / .2);
 
 	@media (prefers-color-scheme: dark) {
@@ -28,8 +28,8 @@
 		--color-bg-l2: rgb(37, 35, 43);
 		--color-bg-l3: rgb(55, 51, 66);
 		--color-lines: rgb(62, 58, 71);
-		--color-links: rgb(151, 90, 221);
-		--color-emphesize: rgb(49 170 102);
+		--color-links: rgb(195 150 48); 
+		--color-emphesize: rgb(55, 196, 116);
 		--color-shadow: rgb(0 0 0 / .2);
 	}
 }
