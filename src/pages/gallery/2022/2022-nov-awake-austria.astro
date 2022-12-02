@@ -1,0 +1,30 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'Awake Austria 2022',
+	desciption: 'Awake Austria Event of the Syro Malabar Community Youth.',
+}
+
+const amountOfImages = 59;
+
+let images = [];
+
+for (let i = 1; i <= amountOfImages; i++) {
+	images.push(            {
+              largeURL:
+                `${import.meta.env.PUBLIC_ASSETS}images/2022/2022-nov-awake-austria/${i}.jpg`,
+              thumbnailURL:
+                `${import.meta.env.PUBLIC_ASSETS}images/2022/2022-nov-awake-austria/thumbnails/${i}.jpg`,
+              width: 1200,
+              height: 800,
+            }
+						)
+}
+---
+
+<Layout {...metaData}>
+	<h1>Awake Austria 2022</h1>
+  	<Gallery client:load galleryID="oct-2022-medjugorge-pilgrimage" images={images} />
+</Layout>
