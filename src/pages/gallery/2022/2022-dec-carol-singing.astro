@@ -3,20 +3,20 @@ import Layout from '../../../layouts/Layout.astro';
 import Gallery from '../../../components/Gallery.svelte'
 
 const metaData = {
-	title: 'Awake Austria 2022',
-	desciption: 'Awake Austria Event of the Syro Malabar Community Youth.',
+	title: 'Christmas Carol Singing',
+	desciption: 'Photos from the christmas carol singing event.',
 }
 
-const amountOfImages = 59;
+const amountOfImages = 220;
 
 let images = [];
 
 for (let i = 1; i <= amountOfImages; i++) {
 	images.push(            {
               largeURL:
-                `${import.meta.env.PUBLIC_ASSETS}images/2022/2022-nov-awake-austria/${i}.jpg`,
+                `${import.meta.env.PUBLIC_ASSETS}images/2022/2022-dec-carol-singing/${i}.jpg`,
               thumbnailURL:
-                `${import.meta.env.PUBLIC_ASSETS}images/2022/2022-nov-awake-austria/thumbnails/${i}.jpg`,
+                `${import.meta.env.PUBLIC_ASSETS}images/2022/2022-dec-carol-singing/thumbnails/${i}.jpg`,
               width: 1200,
               height: 800,
             }
@@ -26,5 +26,5 @@ for (let i = 1; i <= amountOfImages; i++) {
 
 <Layout {...metaData}>
 	<h1>Awake Austria 2022</h1>
-  	<Gallery client:load galleryID="nov-2022-awake-austria" images={images} />
+  	<Gallery client:load galleryID="dec-2022-carol-singing" images={images} />
 </Layout>
