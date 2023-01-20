@@ -136,3 +136,7 @@
 	font-style: normal;
 	color: var(--color-text-faded);
 }
+
+:where(hr) {
+	margin: 32px 0;
+}
