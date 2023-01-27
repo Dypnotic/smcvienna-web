@@ -1,0 +1,30 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'Kairalinikethan Christmas Celebration 2022',
+	desciption: 'Photos from the kairalinikethan christmas celebration 2022',
+}
+
+const amountOfImages = 14;
+
+let images = [];
+
+for (let i = 1; i <= amountOfImages; i++) {
+	images.push(            {
+              largeURL:
+                `${import.meta.env.PUBLIC_ASSETS}images/2022/2022-dec-kairalinikethan-christmas/${i}.jpg`,
+              thumbnailURL:
+                `${import.meta.env.PUBLIC_ASSETS}images/2022/2022-dec-kairalinikethan-christmas/${i}.jpg`,
+              width: 1200,
+              height: 800,
+            }
+						)
+}
+---
+
+<Layout {...metaData}>
+	<h1>Kairalinikethan Christmas Celebration 2022</h1>
+  	<Gallery client:load galleryID="dec-2022-kairalinikethan-christmas" images={images} />
+</Layout>

@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro'
-
+import GalleryCard from '../components/GalleryCard.svelte';
 const metaData = {
 	title: 'Kairali Nikethan School',
 	desciption:
@@ -81,6 +81,19 @@ const metaData = {
 					1210 Wien</p>
 		<img src={`${import.meta.env.PUBLIC_ASSETS}images/kairali-nikethan/franklinstrasse.png`} alt="Location of Franklinstraße">
 	</section>
+	<section>
+		<h2>Photos</h2>
+		<div class="grid">
+			<GalleryCard
+			title='Kairalinikethan Christmas Celebration 2022'
+			url='/gallery/2022/2022-dec-kairalinikethan-christmas'
+			image={`${
+				import.meta.env.PUBLIC_ASSETS
+			}images/2022/2022-dec-kairalinikethan-christmas/thumbnails/1.jpg`}
+			imageAlt='Kairalinikethan Christmas Celebration 2022'
+			/>
+		</div>
+	</section>
 </Layout>
 <style lang="scss">
 	h3 {
@@ -95,5 +108,11 @@ const metaData = {
 		p {
 			margin: 0 0 0 16px;
 		}
+	}
+
+	.grid {
+		display: flex;
+		flex-flow: row wrap;
+		gap: 32px;
 	}
 </style>
