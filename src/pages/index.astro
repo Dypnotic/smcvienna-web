@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import NewsCard from '../components/NewsCard.svelte'
 
-const posts = (await Astro.glob('./news/*.{md,mdx}')).sort(
+const posts = (await Astro.glob('./news/*/*.{md,mdx}')).sort(
 	(a, b) =>
 		new Date(
 			b.frontmatter.updateDate
