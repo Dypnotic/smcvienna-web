@@ -1,0 +1,30 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'Education day 2023',
+	desciption: 'Photos from the education day 2023',
+}
+
+const amountOfImages = 28;
+
+let images = [];
+
+for (let i = 1; i <= amountOfImages; i++) {
+	images.push(            {
+              largeURL:
+                `${import.meta.env.PUBLIC_ASSETS}images/2023/2023-01-education-day/${i}.jpg`,
+              thumbnailURL:
+                `${import.meta.env.PUBLIC_ASSETS}images/2023/2023-01-education-day/thumbnails/${i}.jpg`,
+              width: 1200,
+              height: 800,
+            }
+						)
+}
+---
+
+<Layout {...metaData}>
+	<h1>Eductaion day 2023</h1>
+  	<Gallery client:load galleryID="jan-2023-education-day" images={images} />
+</Layout>

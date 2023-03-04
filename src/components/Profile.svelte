@@ -30,6 +30,7 @@
 	img {
 		align-self: center;
 		max-width: 150px;
+		width: 90px;
 	}
 	.name {
 		font-size: 1.1rem;

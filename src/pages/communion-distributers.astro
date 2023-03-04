@@ -1,0 +1,106 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Profile from '../components/Profile.svelte'
+interface ProfileProp {
+	img: string
+	name: string
+}
+
+const metaData = {
+	title: 'Council',
+	desciption:
+		'Here you can find the structure of our pastoral and financial council, as well as other other roles filled by our members.',
+}
+
+const pastoralCouncil: ProfileProp[] = [
+	{
+		img: '/laisamma-athithara.jpg',
+		name: 'Laisamma Athithara',
+	},
+	{
+		img: '/philomina-ayiramala.jpg',
+		name: 'Laisamma Athithara',
+	},
+	{
+		img: '/stanli-kokkat-chittilappilly.jpg',
+		name: 'Stanli Kokkat Chittilappilly',
+	},
+	{
+		img: '/alice-elavumoodu.jpg',
+		name: 'Alice Elavumoodu',
+	},
+	{
+		img: '/boban-kalapurackal.jpg',
+		name: 'Boban Kalapurackal',
+	},
+	{
+		img: '/boby-kanjirathumoottil.jpg',
+		name: 'Boby Kanjirathumoottil',
+	},
+	{
+		img: '/mary-kappany.jpg',
+		name: 'Mary Kappany',
+	},
+	{
+		img: '/thomas-karakkatu.jpg',
+		name: 'Thomas Karakkatu',
+	},
+	{
+		img: '/daizy-madhavapallil.jpg',
+		name: 'Daizy Madhavapallil',
+	},
+	{
+		img: '/joseph-olimalayil.jpg',
+		name: 'Joseph Olimalayil',
+	},
+	{
+		img: '/thomas-pazhedathuparambil.jpg',
+		name: 'Thomas Pazhedathuparambil',
+	},
+	{
+		img: '/lilly-perumprayil.jpg',
+		name: 'Lilly Perumprayil',
+	},
+	{
+		img: '/roy-jacob-vellukunnel.jpg',
+		name: 'Roy Jacab Vellukunnel',
+	},
+]
+
+---
+
+<Layout {...metaData}>
+	<h1>Communion Distributers</h1>
+	<section>
+		 <p><strong>Coordinating Convener:</strong> Greshma Maria Pallikunnel</p>
+		<div class='council'>
+			{
+				pastoralCouncil.map(member => (
+
+					<Profile
+					image={`${import.meta.env.PUBLIC_ASSETS}images/profiles${member.img}`}
+					name={member.name}
+					role={member.role}
+					roleTranslation={member.roleTranslation}
+					/>
+				))
+			}
+		</div>
+	</section>
+</Layout>
+<style>
+	.council {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(218px, 1fr));
+		grid-template-rows: 1fr auto;
+		justify-items: center;
+		gap: 32px;
+	}
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		list-style: circle;
+		padding: 0 12px;
+	}
+</style>

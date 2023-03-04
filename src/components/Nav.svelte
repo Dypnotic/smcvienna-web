@@ -23,6 +23,10 @@
 			url: '/chaplains'
 		},
 		{
+			name: 'Communion Distributers',
+			url: '/communion-distributers'
+		},
+		{
 			name: 'Council',
 			url: '/council'
 		},
