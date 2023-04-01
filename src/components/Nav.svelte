@@ -23,7 +23,7 @@
 			url: '/chaplains'
 		},
 		{
-			name: 'Communion Distributers',
+			name: 'Comm. Distributers',
 			url: '/communion-distributers'
 		},
 		{
