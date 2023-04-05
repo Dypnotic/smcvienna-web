@@ -1,0 +1,30 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'Palmsunday 2023',
+	desciption: 'Photos from the Palmsunday 2023',
+}
+
+const amountOfImages = 56;
+
+let images = [];
+
+for (let i = 1; i <= amountOfImages; i++) {
+	images.push(            {
+              largeURL:
+                `${import.meta.env.PUBLIC_ASSETS}images/2023/2023-04-palmsunday/${i}.jpg`,
+              thumbnailURL:
+                `${import.meta.env.PUBLIC_ASSETS}images/2023/2023-04-palmsunday/thumbnails/${i}.jpg`,
+              width: 1200,
+              height: 800,
+            }
+						)
+}
+---
+
+<Layout {...metaData}>
+	<h1>Palmsunday 2023</h1>
+  	<Gallery client:load galleryID="apr-2023-palmsunday" images={images} />
+</Layout>
