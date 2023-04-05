@@ -52,8 +52,8 @@
 
 	// Logo and Gradient animation
 	.logo {
-		width: 150px;
-		height: 80px;
+		width: 200px;
+		height: 100px;
 		background-color: crimson;
 		-webkit-mask-image: url(/assets/logo_mini-icon-text.svg);
 		mask-image: url(/assets/logo_mini-icon-text.svg);
@@ -67,12 +67,12 @@
 		background-size: 600% 600%;
 		animation: gradientAnimation 30s ease infinite;
 
-		@media screen and (min-width: variables.$max-width) {
-			width: 400px;
-			height: 150px;
+		/* @media screen and (min-width: variables.$max-width) { */
+			/* width: 400px; */
+			/* height: 150px; */
 			-webkit-mask-image: url(/assets/logo_icon-text.svg);
 			mask-image: url(/assets/logo_icon-text.svg);
-		}
+		/* } */
 	}
 
 	// Menu Button
