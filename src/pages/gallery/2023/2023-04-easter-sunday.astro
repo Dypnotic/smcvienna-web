@@ -1,0 +1,35 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'Easter Sunday 2023',
+	desciption: 'Photos from the easter sunday 2023',
+}
+
+const amountOfImages = 17
+
+let images = []
+
+for (let i = 1; i <= amountOfImages; i++) {
+	images.push({
+		largeURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2023/2023-04-easter-sunday/${i}.jpeg`,
+		thumbnailURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2023/2023-04-easter-sunday/thumbnails/${i}.jpeg`,
+		width: 1200,
+		height: 800,
+	})
+}
+---
+
+<Layout {...metaData}>
+	<h1>Easter Sunday 2023</h1>
+	<Gallery
+		client:load
+		galleryID='apr-2023-easter-sunday'
+		images={images}
+	/>
+</Layout>

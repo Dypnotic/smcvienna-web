@@ -1,0 +1,35 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'Maudy Thursday 2023',
+	desciption: 'Photos from the maudy thursday 2023',
+}
+
+const amountOfImages = 73
+
+let images = []
+
+for (let i = 1; i <= amountOfImages; i++) {
+	images.push({
+		largeURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2023/2023-04-maudy-thursday/${i}.jpeg`,
+		thumbnailURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2023/2023-04-maudy-thursday/thumbnails/${i}.jpeg`,
+		width: 1200,
+		height: 800,
+	})
+}
+---
+
+<Layout {...metaData}>
+	<h1>Maudy Thursday 2023</h1>
+	<Gallery
+		client:load
+		galleryID='apr-2023-maudy-thursday'
+		images={images}
+	/>
+</Layout>

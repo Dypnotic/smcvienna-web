@@ -1,0 +1,35 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'Annual Retreat 2023',
+	desciption: 'Photos from the annual retreat 2023',
+}
+
+const amountOfImages = 161
+
+let images = []
+
+for (let i = 1; i <= amountOfImages; i++) {
+	images.push({
+		largeURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2023/2023-04-annual-easter-retreat/${i}.jpg`,
+		thumbnailURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2023/2023-04-annual-easter-retreat/thumbnails/${i}.jpg`,
+		width: 1200,
+		height: 800,
+	})
+}
+---
+
+<Layout {...metaData}>
+	<h1>Annual Retreat 2023</h1>
+	<Gallery
+		client:load
+		galleryID='apr-2023-annual-easter-retreat'
+		images={images}
+	/>
+</Layout>
