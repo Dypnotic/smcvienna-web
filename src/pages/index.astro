@@ -18,25 +18,38 @@ const posts = (await Astro.glob('./news/*/*.{md,mdx}')).sort(
 ---
 
 <Layout>
-	<h1>News</h1>
-	<ul>
-		{
-			posts.map(post => (
-				<li>
-					<NewsCard
-						title={post.frontmatter.title}
-						url={post.url}
-						image={post.frontmatter.heroImage}
-						pubDate={post.frontmatter.pubDate}
-						updateDate={post.frontmatter.updateDate}
-					/>
-				</li>
-			))
-		}
-	</ul>
+	<section>
+		<h1>Regular Sunday Mass</h1>
+		<h2>Pfarre Maria Lourdes [Meidling]</h2>
+		<p>Sunday Mass at <em>11:30 hrs.</em></p>
+
+		<h2>Pfarre Auferstehung Christi [Saikogasse]</h2>
+		<p>Sunday Mass at <em>17:00 hrs.</em></p>
+	</section>
+	<section>
+		<h1>News</h1>
+		<ul>
+			{
+				posts.map(post => (
+					<li>
+						<NewsCard
+							title={post.frontmatter.title}
+							url={post.url}
+							image={post.frontmatter.heroImage}
+							pubDate={post.frontmatter.pubDate}
+							updateDate={post.frontmatter.updateDate}
+						/>
+					</li>
+				))
+			}
+		</ul>
+	</section>
 </Layout>
 
 <style>
+	h2 {
+		font-size: 1.2rem;
+	}
 	ul {
 		list-style: none;
 		display: flex;

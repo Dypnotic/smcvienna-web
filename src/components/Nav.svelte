@@ -1,61 +1,65 @@
 <script lang="ts">
-
 	interface LinkProp {
-		name: string,
+		name: string
 		url: string
-	};
+	}
 
-	const links: LinkProp[]  = [
+	const links: LinkProp[] = [
 		{
 			name: 'News',
-			url: '/'
+			url: '/',
 		},
 		{
 			name: 'Liturgy',
-			url: '/liturgy'
+			url: '/liturgy',
 		},
 		{
 			name: 'Locations',
-			url: '/locations'
+			url: '/locations',
 		},
 		{
 			name: 'Chaplains',
-			url: '/chaplains'
+			url: '/chaplains',
 		},
 		{
 			name: 'Comm. Distributers',
-			url: '/communion-distributers'
+			url: '/communion-distributers',
 		},
 		{
 			name: 'Council',
-			url: '/council'
+			url: '/council',
 		},
 		{
 			name: 'Catechism',
-			url: '/catechism'
+			url: '/catechism',
 		},
 		{
 			name: 'Marriage Preparation',
-			url: '/marriage-preparation'
+			url: '/marriage-preparation',
 		},
 		{
 			name: 'Kairali Nikethan',
-			url: '/kairali-nikethan'
+			url: '/kairali-nikethan',
 		},
 		{
 			name: 'Youth',
-			url: '/youth'
+			url: '/youth',
 		},
 		{
 			name: 'Gallery',
-			url: '/gallery'
+			url: '/gallery',
+		},
+		{
+			name: 'Structure',
+			url: `${import.meta.env.PUBLIC_ASSETS}documents/smc-structure.pdf`,
 		},
 		{
 			name: 'Downloads',
-			url: '/downloads'
-		}
+			url: '/downloads',
+		},
 	]
 </script>
+
 <nav>
 	<ul>
 		{#each links as link}
@@ -65,20 +69,20 @@
 </nav>
 
 <style lang="scss">
-    @use '../style/variables';
+	@use '../style/variables';
 	nav {
 		width: 100%;
 		height: 100%;
 		overflow: auto;
 	}
 	ul {
-        margin: 0;
-        padding: 0;
+		margin: 0;
+		padding: 0;
 		display: flex;
 		flex-direction: column;
-        @media (min-width: variables.$max-width) {
-            gap: 16px;
-        }
+		@media (min-width: variables.$max-width) {
+			gap: 16px;
+		}
 	}
 	li {
 		list-style: none;
@@ -86,15 +90,15 @@
 	}
 	a {
 		text-decoration: none;
-        padding: 16px;
+		padding: 16px;
 		text-transform: uppercase;
 		letter-spacing: 0.08rem;
-        display: inline-block;
-        width: 100%;
-        @media (min-width: variables.$max-width) {
-            padding: 8px 16px;
-            font-size: 0.8rem;
-            display: inline;
-        }
+		display: inline-block;
+		width: 100%;
+		@media (min-width: variables.$max-width) {
+			padding: 8px 16px;
+			font-size: 0.8rem;
+			display: inline;
+		}
 	}
 </style>
