@@ -1,15 +1,11 @@
 ---
+import GalleryCard from '../components/GalleryCard.svelte';
 import Layout from '../layouts/Layout.astro'
-import Profile from '../components/Profile.svelte'
-interface ProfileProp {
-	img: string
-	name: string
-}
 
 const metaData = {
-	title: 'Council',
+	title: 'SMYM Vienna',
 	desciption:
-		'Here you can find the structure of our pastoral and financial council, as well as other other roles filled by our members.',
+		'Leadership team and photos of SMYM Vienna',
 }
 
 
@@ -21,6 +17,27 @@ const metaData = {
 		<img src={`${import.meta.env.PUBLIC_ASSETS}images/smym/smymvienna-2023.jpg`} alt="SMYM Vienna council" width="718" >
 	
 		<div class='council'>
+		</div>
+	</section>
+	<section>
+		<h2>Photos</h2>
+		<div class="grid">
+		<GalleryCard
+			title='Ecucation day 2023'
+			url='/gallery/2023/2023-01-education-day'
+			image={`${
+				import.meta.env.PUBLIC_ASSETS
+			}images/2023/2023-01-education-day/thumbnails/1.jpg`}
+			imageAlt='Photo from education-day 2023'
+		/>
+		<GalleryCard
+			title='Awake Austria 2022'
+			url='/gallery/2022/2022-nov-awake-austria'
+			image={`${
+				import.meta.env.PUBLIC_ASSETS
+			}images/2022/2022-nov-awake-austria/thumbnails/1.jpg`}
+			imageAlt='Awake Austria 2022'
+		/>
 		</div>
 	</section>
 </Layout>
@@ -38,5 +55,10 @@ const metaData = {
 		gap: 8px;
 		list-style: circle;
 		padding: 0 12px;
+	}
+	.grid {
+		display: flex;
+		flex-flow: row wrap;
+		gap: 32px;
 	}
 </style>
