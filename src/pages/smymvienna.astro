@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro'
+import Profile from '../components/Profile.svelte'
+interface ProfileProp {
+	img: string
+	name: string
+}
+
+const metaData = {
+	title: 'Council',
+	desciption:
+		'Here you can find the structure of our pastoral and financial council, as well as other other roles filled by our members.',
+}
+
+
+---
+
+<Layout {...metaData}>
+	<h1>Syro Malabar Youth Movement Vienna</h1>
+	<section>
+		<img src={`${import.meta.env.PUBLIC_ASSETS}images/smym/smymvienna-2023.jpg`} alt="SMYM Vienna council" width="718" >
+	
+		<div class='council'>
+		</div>
+	</section>
+</Layout>
+<style>
+	.council {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(218px, 1fr));
+		grid-template-rows: 1fr auto;
+		justify-items: center;
+		gap: 32px;
+	}
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		list-style: circle;
+		padding: 0 12px;
+	}
+</style>
