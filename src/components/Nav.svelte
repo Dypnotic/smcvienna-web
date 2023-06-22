@@ -42,8 +42,8 @@
 			url: '/kairali-nikethan',
 		},
 		{
-			name: 'Youth',
-			url: '/youth',
+			name: 'SMYM Vienna',
+			url: '/smymvienna',
 		},
 		{
 			name: 'Gallery',

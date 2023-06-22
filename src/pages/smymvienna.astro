@@ -1,0 +1,64 @@
+---
+import GalleryCard from '../components/GalleryCard.svelte';
+import Layout from '../layouts/Layout.astro'
+
+const metaData = {
+	title: 'SMYM Vienna',
+	desciption:
+		'Leadership team and photos of SMYM Vienna',
+}
+
+
+---
+
+<Layout {...metaData}>
+	<h1>Syro Malabar Youth Movement Vienna</h1>
+	<section>
+		<img src={`${import.meta.env.PUBLIC_ASSETS}images/smym/smymvienna-2023.jpg`} alt="SMYM Vienna council" width="718" >
+	
+		<div class='council'>
+		</div>
+	</section>
+	<section>
+		<h2>Photos</h2>
+		<div class="grid">
+		<GalleryCard
+			title='Ecucation day 2023'
+			url='/gallery/2023/2023-01-education-day'
+			image={`${
+				import.meta.env.PUBLIC_ASSETS
+			}images/2023/2023-01-education-day/thumbnails/1.jpg`}
+			imageAlt='Photo from education-day 2023'
+		/>
+		<GalleryCard
+			title='Awake Austria 2022'
+			url='/gallery/2022/2022-nov-awake-austria'
+			image={`${
+				import.meta.env.PUBLIC_ASSETS
+			}images/2022/2022-nov-awake-austria/thumbnails/1.jpg`}
+			imageAlt='Awake Austria 2022'
+		/>
+		</div>
+	</section>
+</Layout>
+<style>
+	.council {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(218px, 1fr));
+		grid-template-rows: 1fr auto;
+		justify-items: center;
+		gap: 32px;
+	}
+	ul {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		list-style: circle;
+		padding: 0 12px;
+	}
+	.grid {
+		display: flex;
+		flex-flow: row wrap;
+		gap: 32px;
+	}
+</style>
