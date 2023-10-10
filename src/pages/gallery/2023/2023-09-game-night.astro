@@ -1,0 +1,35 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'Autumn Game Night 2023',
+	desciption: 'Autumn Game Night 2023',
+}
+
+const amountOfImages = 15; 
+
+let images = []
+
+for (let i = 1; i <= amountOfImages; i++) {
+	images.push({
+		largeURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2023/2023-09-game-night/${i}.jpg`,
+		thumbnailURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2023/2023-09-game-night/thumbnails/${i}.jpg`,
+		width: 1200,
+		height: 800,
+	})
+}
+---
+
+<Layout {...metaData}>
+	<h1>{metaData.title}</h1>
+	<Gallery
+		client:load
+		galleryID='september-2023-game-night'
+		images={images}
+	/>
+</Layout>

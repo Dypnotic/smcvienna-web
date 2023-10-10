@@ -1,0 +1,35 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'Send off to Rev. Father Cyriac Njayarkulam CMF',
+	desciption: 'Send off to Rev. Father Cyriac Njayarkulam CMF',
+}
+
+const amountOfImages = 37; 
+
+let images = []
+
+for (let i = 1; i <= amountOfImages; i++) {
+	images.push({
+		largeURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2023/2023-09-send-off-cyriac-njayarkulam/${i}.jpg`,
+		thumbnailURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2023/2023-09-send-off-cyriac-njayarkulam/thumbnails/${i}.jpg`,
+		width: 1200,
+		height: 800,
+	})
+}
+---
+
+<Layout {...metaData}>
+	<h1>{metaData.title}</h1>
+	<Gallery
+		client:load
+		galleryID='september-2023-send-off-cyriac-njayarkulam'
+		images={images}
+	/>
+</Layout>
