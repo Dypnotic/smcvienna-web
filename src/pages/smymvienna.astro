@@ -3,16 +3,16 @@ import GalleryCard from '../components/GalleryCard.svelte';
 import Layout from '../layouts/Layout.astro'
 
 const metaData = {
-	title: 'SMYM Vienna',
+	title: 'SMYM St.Thomas SMC Vienna',
 	desciption:
-		'Leadership team and photos of SMYM Vienna',
+		'Leadership team and photos of SMYM St.Thomas SMC Vienna',
 }
 
 
 ---
 
 <Layout {...metaData}>
-	<h1>Syro Malabar Youth Movement Vienna</h1>
+	<h1>Syro Malabar Youth Movement St.Thomas Syro Malabar Community Vienna</h1>
 	<!-- <section> -->
 	<!-- 	<img src={`${import.meta.env.PUBLIC_ASSETS}images/smym/smymvienna-2023.jpg`} alt="SMYM Vienna council" width="718" > -->
 	<!--  -->
@@ -20,7 +20,7 @@ const metaData = {
 	<!-- 	</div> -->
 	<!-- </section> -->
 	<section>
-		<img src={`${import.meta.env.PUBLIC_ASSETS}images/smym/smym-agape.jpg`} alt="SMYM Vienna council" width="718" >
+		<img src={`${import.meta.env.PUBLIC_ASSETS}images/smym/smym-agape.jpg`} alt="SMYM St.Thomas SMC Vienna agape" width="718" >
 
 		<div class='council'>
 		</div>
@@ -28,6 +28,14 @@ const metaData = {
 	<section>
 		<h2>Photos</h2>
 		<div class="grid">
+		<GalleryCard
+			title='Christmas Special Agape 2023'
+			url='/gallery/2023/2023-12-christmas-special-agape'
+			image={`${
+				import.meta.env.PUBLIC_ASSETS
+			}images/2023/2023-12-christmas-special-agape/thumbnails/0.jpg`}
+			imageAlt='Christmas Special Agape 2023'
+		/>
 		<GalleryCard
 			title='Autumn Film Night 2023'
 			url='/gallery/2023/2023-11-film-night'
