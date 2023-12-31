@@ -42,7 +42,7 @@
 			url: '/kairali-nikethan',
 		},
 		{
-			name: 'SMYM Vienna',
+			name: 'SMYM St.Thomas SMC Vienna',
 			url: '/smymvienna',
 		},
 		{
@@ -93,12 +93,11 @@
 		padding: 16px;
 		text-transform: uppercase;
 		letter-spacing: 0.08rem;
-		display: inline-block;
+		display: block;
 		width: 100%;
 		@media (min-width: variables.$max-width) {
 			padding: 8px 16px;
 			font-size: 0.8rem;
-			display: inline;
 		}
 	}
 </style>
