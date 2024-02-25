@@ -1,0 +1,35 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'Send off to Rev. Fr. Davis Kalapurackal and 25th Ordination Aniversary of Rev. Fr. Tomy Madhavappallil on 18th of Feb 2024',
+	desciption: 'Send off to Rev. Fr. Davis Kalapurackal and 25th Ordination Aniversary of Rev. Fr. Tomy Madhavappallil on 18th of Feb 2024',
+}
+
+const amountOfImages = 47; 
+
+let images = []
+
+for (let i = 0; i <= amountOfImages; i++) {
+	images.push({
+		largeURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2024/2024-02-send-off-kalapurackal-madhavappallil/${i}.jpg`,
+		thumbnailURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2024/2024-02-send-off-kalapurackal-madhavappallil/thumbnails/${i}.jpg`,
+		width: 1200,
+		height: 800,
+	})
+}
+---
+
+<Layout {...metaData}>
+	<h1>{metaData.title}</h1>
+	<Gallery
+		client:load
+		galleryID='2024/2024-02-send-off-kalapurackal-madhavappallil'
+		images={images}
+	/>
+</Layout>
