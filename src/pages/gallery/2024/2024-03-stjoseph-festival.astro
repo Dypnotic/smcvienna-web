@@ -3,11 +3,11 @@ import Layout from '../../../layouts/Layout.astro'
 import Gallery from '../../../components/Gallery.svelte'
 
 const metaData = {
-	title: 'Ecumenical Carol Music Competition on the 10th Dec 2023',
-	desciption: 'Ecumenical Carol Music Competition on the 10th Dec 2023',
+	title: 'St. Joseph Festival 2024',
+	desciption: 'St. Joseph Festival 2024',
 }
 
-const amountOfImages = 245; 
+const amountOfImages = 3; 
 
 let images = []
 
@@ -15,10 +15,10 @@ for (let i = 0; i <= amountOfImages; i++) {
 	images.push({
 		largeURL: `${
 			import.meta.env.PUBLIC_ASSETS
-		}images/2023/2023-12-carol-singing/${i}.jpg`,
+		}images/2024/2024-03-stjoseph-festival/${i}.jpg`,
 		thumbnailURL: `${
 			import.meta.env.PUBLIC_ASSETS
-		}images/2023/2023-12-carol-singing/thumbnails/${i}.jpg`,
+		}images/2024/2024-03-stjoseph-festival/thumbnails/${i}.jpg`,
 		width: 1200,
 		height: 800,
 	})
@@ -29,7 +29,7 @@ for (let i = 0; i <= amountOfImages; i++) {
 	<h1>{metaData.title}</h1>
 	<Gallery
 		client:load
-		galleryID='carol-singing-12-2023'
+		galleryID='stjoseph-festival-03-2024'
 		images={images}
 	/>
 </Layout>
