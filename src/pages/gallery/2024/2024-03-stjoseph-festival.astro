@@ -1,0 +1,35 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'St. Joseph Festival 2024',
+	desciption: 'St. Joseph Festival 2024',
+}
+
+const amountOfImages = 3; 
+
+let images = []
+
+for (let i = 0; i <= amountOfImages; i++) {
+	images.push({
+		largeURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2024/2024-03-stjoseph-festival/${i}.jpg`,
+		thumbnailURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2024/2024-03-stjoseph-festival/thumbnails/${i}.jpg`,
+		width: 1200,
+		height: 800,
+	})
+}
+---
+
+<Layout {...metaData}>
+	<h1>{metaData.title}</h1>
+	<Gallery
+		client:load
+		galleryID='stjoseph-festival-03-2024'
+		images={images}
+	/>
+</Layout>
