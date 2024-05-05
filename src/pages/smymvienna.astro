@@ -1,102 +1,140 @@
 ---
-import GalleryCard from '../components/GalleryCard.svelte';
+import GalleryCard from '../components/GalleryCard.svelte'
 import Layout from '../layouts/Layout.astro'
 
 const metaData = {
 	title: 'SMYM St.Thomas SMC Vienna',
-	desciption:
-		'Leadership team and photos of SMYM St.Thomas SMC Vienna',
+	desciption: 'Leadership team and photos of SMYM St.Thomas SMC Vienna',
 }
-
-
 ---
 
 <Layout {...metaData}>
 	<h1>Syro Malabar Youth Movement St.Thomas Syro Malabar Community Vienna</h1>
-	<!-- <section> -->
-	<!-- 	<img src={`${import.meta.env.PUBLIC_ASSETS}images/smym/smymvienna-2023.jpg`} alt="SMYM Vienna council" width="718" > -->
-	<!--  -->
-	<!-- 	<div class='council'> -->
-	<!-- 	</div> -->
-	<!-- </section> -->
-	<section>
-		<img src={`${import.meta.env.PUBLIC_ASSETS}images/smym/smym-agape.jpg`} alt="SMYM St.Thomas SMC Vienna agape" width="718" >
 
-		<div class='council'>
-		</div>
-	</section>
 	<section>
-		<h2>Photos</h2>
-		<div class="grid">
-		<GalleryCard
-			title='Christmas Special Agape 2023'
-			url='/gallery/2023/2023-12-christmas-special-agape'
-			image={`${
-				import.meta.env.PUBLIC_ASSETS
-			}images/2023/2023-12-christmas-special-agape/thumbnails/0.jpg`}
-			imageAlt='Christmas Special Agape 2023'
+		<img
+			src={`${import.meta.env.PUBLIC_ASSETS}images/smym/smymvienna-2024.jpg`}
+			alt='SMYM Vienna council'
+			width='718'
 		/>
-		<GalleryCard
-			title='Autumn Film Night 2023'
-			url='/gallery/2023/2023-11-film-night'
-			image={`${
-				import.meta.env.PUBLIC_ASSETS
-			}images/2023/2023-11-film-night/thumbnails/0.jpg`}
-			imageAlt='Photo from the Autumn Film Night 2023'
-		/>
-		<GalleryCard
-			title='SMYM Mariazell Pilgrimage 2023'
-			url='/gallery/2023/2023-10-smym-mariazell'
-			image={`${
-				import.meta.env.PUBLIC_ASSETS
-			}images/2023/2023-10-smym-mariazell/thumbnails/5.jpg`}
-			imageAlt='Photo from the SMYM Mariazell Pilgrimage 2023'
-		/>
-		<GalleryCard
-			title='Autumn Game Night 2023'
-			url='/gallery/2023/2023-09-game-night'
-			image={`${
-				import.meta.env.PUBLIC_ASSETS
-			}images/2023/2023-09-game-night/thumbnails/7.jpg`}
-			imageAlt='Photo from the Autumn Game Night 2023'
-		/>
-		<GalleryCard
-			title='Ecucation day 2023'
-			url='/gallery/2023/2023-01-education-day'
-			image={`${
-				import.meta.env.PUBLIC_ASSETS
-			}images/2023/2023-01-education-day/thumbnails/1.jpg`}
-			imageAlt='Photo from education-day 2023'
-		/>
-		<GalleryCard
-			title='Awake Austria 2022'
-			url='/gallery/2022/2022-nov-awake-austria'
-			image={`${
-				import.meta.env.PUBLIC_ASSETS
-			}images/2022/2022-nov-awake-austria/thumbnails/1.jpg`}
-			imageAlt='Awake Austria 2022'
-		/>
+
+		<div class='council'></div>
+		<div>
+			<p>
+				Introducing the Executive team of St.Thomas SMYM Vienna. United by a
+				passion for community engagement and youth empowerment, we aim to
+				nurture the spiritual and social development of our youth, creating
+				opportunities for learning and meaningful connections. Join us on this
+				journey to build a vibrant, inclusive community where every young person
+				feels valued and empowered to make a difference!
+			</p>
+
+			<p>
+				Follow us on 
+				<a href='https://www.instagram.com/smym_vienna?igsh=Z3B4bDdwaDJjbGdm'
+					>Instagram</a
+				>
+			</p>
+			<p>
+				Subscribe to our 
+				<a href='https://youtube.com/@smymst.thomassmcvienna?si=CIM8HueHLCIrwHpq'>Youtube channel</a>
+			</p>
+			<p>
+				Connect with us on 
+				<a href='https://www.facebook.com/smymvienna'>Facebook</a>
+			</p>
+			<p>
+				Visit our 
+				<a href='https://smcvienna.org/smymvienna'>website</a>
+			</p>
+			<p>
+				Stay updated and get involved...
+				<p></p>
+			</p>
+
+			<section>
+				<img
+					src={`${import.meta.env.PUBLIC_ASSETS}images/smym/smym-agape-2024.jpg`}
+					alt='SMYM St.Thomas SMC Vienna agape'
+					width='718'
+				/>
+
+				<div class='council'></div>
+			</section>
+			<section>
+				<h2>Photos</h2>
+				<div class='grid'>
+					<GalleryCard
+						title='Christmas Special Agape 2023'
+						url='/gallery/2023/2023-12-christmas-special-agape'
+						image={`${
+							import.meta.env.PUBLIC_ASSETS
+						}images/2023/2023-12-christmas-special-agape/thumbnails/0.jpg`}
+						imageAlt='Christmas Special Agape 2023'
+					/>
+					<GalleryCard
+						title='Autumn Film Night 2023'
+						url='/gallery/2023/2023-11-film-night'
+						image={`${
+							import.meta.env.PUBLIC_ASSETS
+						}images/2023/2023-11-film-night/thumbnails/0.jpg`}
+						imageAlt='Photo from the Autumn Film Night 2023'
+					/>
+					<GalleryCard
+						title='SMYM Mariazell Pilgrimage 2023'
+						url='/gallery/2023/2023-10-smym-mariazell'
+						image={`${
+							import.meta.env.PUBLIC_ASSETS
+						}images/2023/2023-10-smym-mariazell/thumbnails/5.jpg`}
+						imageAlt='Photo from the SMYM Mariazell Pilgrimage 2023'
+					/>
+					<GalleryCard
+						title='Autumn Game Night 2023'
+						url='/gallery/2023/2023-09-game-night'
+						image={`${
+							import.meta.env.PUBLIC_ASSETS
+						}images/2023/2023-09-game-night/thumbnails/7.jpg`}
+						imageAlt='Photo from the Autumn Game Night 2023'
+					/>
+					<GalleryCard
+						title='Ecucation day 2023'
+						url='/gallery/2023/2023-01-education-day'
+						image={`${
+							import.meta.env.PUBLIC_ASSETS
+						}images/2023/2023-01-education-day/thumbnails/1.jpg`}
+						imageAlt='Photo from education-day 2023'
+					/>
+					<GalleryCard
+						title='Awake Austria 2022'
+						url='/gallery/2022/2022-nov-awake-austria'
+						image={`${
+							import.meta.env.PUBLIC_ASSETS
+						}images/2022/2022-nov-awake-austria/thumbnails/1.jpg`}
+						imageAlt='Awake Austria 2022'
+					/>
+				</div>
+			</section>
 		</div>
-	</section>
-</Layout>
-<style>
-	.council {
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(218px, 1fr));
-		grid-template-rows: 1fr auto;
-		justify-items: center;
-		gap: 32px;
-	}
-	ul {
-		display: flex;
-		flex-direction: column;
-		gap: 8px;
-		list-style: circle;
-		padding: 0 12px;
-	}
-	.grid {
-		display: flex;
-		flex-flow: row wrap;
-		gap: 32px;
-	}
-</style>
+		<style>
+			.council {
+				display: grid;
+				grid-template-columns: repeat(auto-fill, minmax(218px, 1fr));
+				grid-template-rows: 1fr auto;
+				justify-items: center;
+				gap: 32px;
+			}
+			ul {
+				display: flex;
+				flex-direction: column;
+				gap: 8px;
+				list-style: circle;
+				padding: 0 12px;
+			}
+			.grid {
+				display: flex;
+				flex-flow: row wrap;
+				gap: 32px;
+			}
+		</style>
+	</section></Layout
+>
