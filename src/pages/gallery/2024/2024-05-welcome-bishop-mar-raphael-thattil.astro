@@ -1,0 +1,35 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'Welcome to Major Arch Bishop Mar Raphael Thattil Pithave at Vienna Airport on 23rd May 2024 at 3 pm.',
+	desciption: 'Welcome to Major Arch Bishop Mar Raphael Thattil Pithave at Vienna Airport on 23rd May 2024 at 3 pm.',
+}
+
+const amountOfImages = 12; 
+
+let images = []
+
+for (let i = 0; i <= amountOfImages; i++) {
+	images.push({
+		largeURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2024/2024-05-welcome-bishop-mar-raphael-thattil/${i}.jpg`,
+		thumbnailURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2024/2024-05-welcome-bishop-mar-raphael-thattil/thumbnails/${i}.jpg`,
+		width: 1200,
+		height: 800,
+	})
+}
+---
+
+<Layout {...metaData}>
+	<h1>{metaData.title}</h1>
+	<Gallery
+		client:load
+		galleryID='welcome-bishop-mar-raphael-thattil-2025-05'
+		images={images}
+	/>
+</Layout>
