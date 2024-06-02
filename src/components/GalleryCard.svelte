@@ -1,7 +1,7 @@
 <script lang="ts">
 	export let title: string;
 	export let image = '';
-	export let imageAlt = `${title} (Hero Image)`;
+	export let imageAlt = `${title}`;
 	export let url: string;
 </script>
 

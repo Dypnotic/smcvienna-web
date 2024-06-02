@@ -1,0 +1,35 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'First Holy Communion Holy Confirmation and Birthday Celebration of Rev Fr Thomas Thandappilly 2024',
+	desciption: 'First Holy Communion Holy Confirmation and Birthday Celebration of Rev Fr Thomas Thandappilly 2024',
+}
+
+const amountOfImages = 237; 
+
+let images = []
+
+for (let i = 0; i <= amountOfImages; i++) {
+	images.push({
+		largeURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2024/2024-05-first-holy-communion/${i}.jpg`,
+		thumbnailURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2024/2024-05-first-holy-communion/thumbnails/${i}.jpg`,
+		width: 1200,
+		height: 800,
+	})
+}
+---
+
+<Layout {...metaData}>
+	<h1>{metaData.title}</h1>
+	<Gallery
+		client:load
+		galleryID='first-holy-communion-05-2024'
+		images={images}
+	/>
+</Layout>
