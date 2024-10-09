@@ -1,0 +1,36 @@
+
+---
+import Layout from '../../../layouts/Layout.astro'
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'Pilgrimage to Italy 2024',
+	desciption: 'Pilgrimage to Italy 2024',
+}
+
+const amountOfImages = 317; 
+
+let images = []
+
+for (let i = 0; i <= amountOfImages; i++) {
+	images.push({
+		largeURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2024/2024-10-pilgrimage-to-italy/${i}.jpg`,
+		thumbnailURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2024/2024-10-pilgrimage-to-italy/thumbnails/${i}.jpg`,
+		width: 1200,
+		height: 800,
+	})
+}
+---
+
+<Layout {...metaData}>
+	<h1>{metaData.title}</h1>
+	<Gallery
+		client:load
+		galleryID='pilgrimage-to-italy-2024-10'
+		images={images}
+	/>
+</Layout>
