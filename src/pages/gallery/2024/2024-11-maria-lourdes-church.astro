@@ -1,0 +1,36 @@
+
+---
+import Layout from '../../../layouts/Layout.astro'
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'Farewell mass and meeting of Fr. Wilson Mecheril at Maria Lourdes Church on 24. Nov 2024',
+	desciption: 'Farewell mass and meeting of Fr. Wilson Mecheril at Maria Lourdes Church on 24. Nov 2024',
+}
+
+const amountOfImages = 233; 
+
+let images = []
+
+for (let i = 0; i <= amountOfImages; i++) {
+	images.push({
+		largeURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2024/2024-11-maria-lourdes-church/${i}.jpg`,
+		thumbnailURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2024/2024-11-maria-lourdes-church/thumbnails/${i}.jpg`,
+		width: 1200,
+		height: 800,
+	})
+}
+---
+
+<Layout {...metaData}>
+	<h1>{metaData.title}</h1>
+	<Gallery
+		client:load
+		galleryID='maria-lourdes-church-2024-11'
+		images={images}
+	/>
+</Layout>
