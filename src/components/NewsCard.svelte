@@ -45,6 +45,7 @@
 <style lang="scss">
 	img {
 		object-fit: contain;
+		align-self: center;
 	}
 	a {
 		display: flex;
