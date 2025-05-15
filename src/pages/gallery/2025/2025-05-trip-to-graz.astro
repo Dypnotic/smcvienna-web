@@ -1,0 +1,35 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'One day trip to Graz on behal of Mathurvedi and Pithurvedi on 12th May 2025',
+	desciption: 'One day trip to Graz on behal of Mathurvedi and Pithurvedi on 12th May 2025',
+}
+
+const amountOfImages = 116; 
+
+let images = []
+
+for (let i = 0; i <= amountOfImages; i++) {
+	images.push({
+		largeURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2025/2025-05-trip-to-graz/${i}.jpg`,
+		thumbnailURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2025/2025-05-trip-to-graz/thumbnails/${i}.jpg`,
+		width: 1200,
+		height: 800,
+	})
+}
+---
+
+<Layout {...metaData}>
+	<h1>{metaData.title}</h1>
+	<Gallery
+		client:load
+		galleryID='trip-to-graz-2025-04'
+		images={images}
+	/>
+</Layout>
