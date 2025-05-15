@@ -1,0 +1,35 @@
+---
+import Layout from '../../../layouts/Layout.astro'
+import Gallery from '../../../components/Gallery.svelte'
+
+const metaData = {
+	title: 'Birthday Celebration of Rev. Fr. Thomas Thandappilly on 4th Sunday of May 2025',
+	desciption: 'Birthday Celebration of Rev. Fr. Thomas Thandappilly on 4th Sunday of May 2025',
+}
+
+const amountOfImages = 22; 
+
+let images = []
+
+for (let i = 0; i <= amountOfImages; i++) {
+	images.push({
+		largeURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2025/2025-05-thandappilly-birthday/${i}.jpg`,
+		thumbnailURL: `${
+			import.meta.env.PUBLIC_ASSETS
+		}images/2025/2025-05-thandappilly-birthday/thumbnails/${i}.jpg`,
+		width: 1200,
+		height: 800,
+	})
+}
+---
+
+<Layout {...metaData}>
+	<h1>{metaData.title}</h1>
+	<Gallery
+		client:load
+		galleryID='thandappilly-birthday-2025-05'
+		images={images}
+	/>
+</Layout>
